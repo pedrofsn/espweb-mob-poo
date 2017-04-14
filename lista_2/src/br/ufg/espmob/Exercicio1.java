@@ -1,19 +1,11 @@
 package br.ufg.espmob;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
-
 import javax.swing.*;
-import java.text.ParseException;
 
 /**
  * Created by pedrofsn on 14/04/2017.
  */
-public class Main extends Ui {
-
-    public static void main(String[] args) {
-        exercicio1();
-        espaco();
-    }
+public class Exercicio1 {
 
     /*
     *   Crie um programa que receba por janela JOptionPane o valor de um produto e um código de
@@ -27,8 +19,7 @@ public class Main extends Ui {
     *   Utilizando a estrutura switch-case para o aumento, calcule novo valor do produto. Ao final mostre o
     *   valor total com o imposto.
     * */
-    private static void exercicio1() {
-        printExercicio(1);
+    public static void main(String[] args) {
         String valorEntrada = JOptionPane.showInputDialog("Insira o valor de um produto");
         String mensagemErro = "Valor vazio ou inválido";
         float valorProduto;
