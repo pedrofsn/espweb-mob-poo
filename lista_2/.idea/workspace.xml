@@ -4,8 +4,6 @@
     <list default="true" id="87d5ce9d-ba06-4b53-ac3a-62fd75c95414" name="Default" comment="Refactoring">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/br/ufg/espmob/Exercicio2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/ufg/espmob/Exercicio1.java" afterPath="$PROJECT_DIR$/src/br/ufg/espmob/Exercicio1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/br/ufg/espmob/Utils.java" afterPath="$PROJECT_DIR$/src/br/ufg/espmob/Utils.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -402,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492204775078</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Refactoring">
+      <created>1492205776073</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1492205776073</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
