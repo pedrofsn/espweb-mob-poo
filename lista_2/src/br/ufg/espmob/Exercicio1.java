@@ -61,9 +61,9 @@ public class Exercicio1 {
 
         float novoValorProduto = acrescentarPercentagem(valorProduto, aumentoPercentual);
 
-        System.out.println("Valor inserido: R$ " + formatarValor(valorProduto));
-        System.out.println("Aumento selecionado: " + formatarValor(aumentoPercentual) + "%");
-        System.out.println("Valor calculado: R$ " + formatarValor(novoValorProduto));
+        System.out.println("Valor inserido: " + Utils.getValorMonetario(valorProduto));
+        System.out.println("Aumento selecionado: " + aumentoPercentual + "%");
+        System.out.println("Valor calculado: " + Utils.getValorMonetario(novoValorProduto));
 
         float novoAumento = 0;
 
@@ -79,19 +79,15 @@ public class Exercicio1 {
         }
 
         if (novoAumento != 0) {
-            System.out.println("Percentual do imposto: " + formatarValor(novoAumento) + "%");
-            System.out.println("Valor com o imposto: R$ " + formatarValor(acrescentarPercentagem(novoValorProduto, novoAumento)));
+            System.out.println("Percentual do imposto: " + Utils.getValorMonetario(novoAumento) + "%");
+            System.out.println("Valor com o imposto: " + Utils.getValorMonetario(acrescentarPercentagem(novoValorProduto, novoAumento)));
         } else {
             System.out.println("Não foi necessário aplicar o imposto");
         }
     }
 
-    private static String formatarValor(float valor) {
-        return String.format("%.2f", valor);
-    }
-
     private static float acrescentarPercentagem(float valorProduto, float aumentoPercentual) {
-        return (((aumentoPercentual / 100) + 1) * valorProduto);
+        return (aumentoPercentual / 100 + 1) * valorProduto;
     }
 
 }

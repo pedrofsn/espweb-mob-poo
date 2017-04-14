@@ -8,7 +8,7 @@ import java.text.NumberFormat;
  */
 public class Utils {
 
-    public static String getValorMonetario(float valorEntrada) {
+    public static String getValorMonetario(double valorEntrada) {
         try {
             BigDecimal valor = new BigDecimal(valorEntrada);
             NumberFormat nf = NumberFormat.getCurrencyInstance();
