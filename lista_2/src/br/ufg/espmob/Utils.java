@@ -8,6 +8,16 @@ import java.text.NumberFormat;
  */
 public class Utils {
 
+    public static void print(String string) {
+        if (!isNullOrEmpty(string)) {
+            System.out.println(string.trim());
+        }
+    }
+
+    public static boolean isNullOrEmpty(String string) {
+        return string == null || "".equals(string.trim());
+    }
+
     public static String getValorMonetario(double valorEntrada) {
         try {
             BigDecimal valor = new BigDecimal(valorEntrada);
