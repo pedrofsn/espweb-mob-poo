@@ -10,7 +10,7 @@ Desenvolver um sistema para um supermercado. O supermercado tem um gerente e cin
 - Permitir que clientes consultem o preço dos produtos em leitores espalhados pelo supermercado.
 - Permitir que o gerente emita relatórios de vendas e de estoque. O relatório de vendas deve informar, para cada caixa, os valores das vendas realizadas no dia, assim como o funcionário responsável pela venda. O relatório de estoque deve informar as quantidades disponíveis por produto no início do dia e no final do dia.
 
-###Entregáveis:
+### Entregáveis:
 - Diagramas de Classe descritos usando a ferramenta Astah.
 - Códigos em Java
 - Arquivo README.TXT contendo os passos de configuração e instalação necessários para a execução do sistema e os nomes dos participantes.
