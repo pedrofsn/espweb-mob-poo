@@ -1,9 +1,9 @@
 # Problemas - 2 - 2a. Lista de Problemas de Programação
-## Práticos
+## Exercícios práticos
 - [Código Java](https://github.com/pedrofsn/espweb-mob-poo/tree/master/lista_2/src/br/ufg/espmob)
 
-## Teóricos:
-Exercícios da apostila [Java e Orientação a Objetos: Curso FJ-11 da Caelum](https://www.caelum.com.br/download/caelum-java-objetos-fj11.pdf)
+## Exercícios teóricos:
+Referência: [Java e Orientação a Objetos: Curso FJ-11 da Caelum](https://www.caelum.com.br/download/caelum-java-objetos-fj11.pdf)
 
 ### Página 54
 4) Diferentes, pois são objetos distintos;
