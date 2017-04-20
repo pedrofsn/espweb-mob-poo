@@ -1,4 +1,4 @@
-package br.ufg.espmob;
+package br.ufg.espmob.desafio;
 
 /**
  * Created by pedrofsn on 18/04/2017.

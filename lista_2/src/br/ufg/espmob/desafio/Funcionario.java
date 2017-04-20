@@ -1,4 +1,6 @@
-package br.ufg.espmob;
+package br.ufg.espmob.desafio;
+
+import br.ufg.espmob.Utils;
 
 /**
  * Created by pedrofsn on 18/04/2017.
