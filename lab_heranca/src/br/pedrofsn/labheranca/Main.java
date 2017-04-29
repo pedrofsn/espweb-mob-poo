@@ -25,12 +25,18 @@ public class Main {
 
         Funcionario[] funcionarios = new Funcionario[]{horista1, horista2, administrador1, administrador2, administrador3, administrador4, comissionado1, comissionado2, comissionado3, gerente1};
 
+        double folhaPagamento = 0.0;
+
         for (int i = 0; i < funcionarios.length; i++) {
             Funcionario funcionario = funcionarios[i];
 
             if(funcionario != null) {
-                Utils.print("O funcionário " + funcionario.getClass().getSimpleName() + " recebe " + Utils.getValorMonetario(funcionario.calcularSalario()));
+                double salario = funcionario.calcularSalario();
+                Utils.print("O funcionário " + funcionario.getClass().getSimpleName() + " recebe " + Utils.getValorMonetario(salario));
+                folhaPagamento += salario;
             }
         }
+
+        Utils.print("O valor total da folha de pagamento é " + Utils.getValorMonetario(folhaPagamento));
     }
 }
