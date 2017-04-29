@@ -8,7 +8,7 @@ package br.ufg.lab.diagramaum;
 /**
  * @author maratona
  */
-public class Teste {
+public class Main {
 
     public static void main(String[] args) {
 
