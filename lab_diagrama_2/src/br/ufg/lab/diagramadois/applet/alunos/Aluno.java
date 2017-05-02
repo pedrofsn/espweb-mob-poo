@@ -1,6 +1,7 @@
 package br.ufg.lab.diagramadois.applet.alunos;
 
 public class Aluno {
+
     private int matr;
     private String nome;
     private double nota1;
@@ -13,8 +14,7 @@ public class Aluno {
         setNotas(0, 0, 0);
     }
 
-    public Aluno(int matr, String nome, double nota1,
-                 double nota2, double nota3) {
+    public Aluno(int matr, String nome, double nota1, double nota2, double nota3) {
         setMatr(matr);
         setNome(nome);
         setNotas(nota1, nota2, nota3);

@@ -7,6 +7,13 @@ public class Aluno {
     private double nota2;
     private double nota3;
 
+    public Aluno() {
+    }
+
+    public Aluno(String nome) {
+        this.nome = nome;
+    }
+
     public Aluno(int matr, String nome) {
         setMatr(matr);
         setNome(nome);

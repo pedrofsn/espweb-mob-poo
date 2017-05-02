@@ -1,9 +1,20 @@
 package br.ufg.lab.diagramadois.applet.alunos;
 
 public class Turma {
-    Aluno[] aluno;
-    int maximo;
-    int atual = 0;
+
+    private Aluno[] aluno;
+    private int maximo;
+    private int atual = 0;
+    private Disciplina disciplina;
+
+    public Turma(Aluno[] aluno) {
+        this.aluno = aluno;
+    }
+
+    public Turma(Aluno[] aluno, Disciplina disciplina) {
+        this.aluno = aluno;
+        this.disciplina = disciplina;
+    }
 
     public Turma(int maximo) {
         this.maximo = maximo;
@@ -23,7 +34,6 @@ public class Turma {
         }
         return false;
     }
-
 
     public double media() {
         double soma = 0;
@@ -52,5 +62,41 @@ public class Turma {
                 menor = aluno[i].media();
             }
         return piorAluno;
+    }
+
+    public boolean hasDisciplinaVinculada() {
+        return disciplina != null;
+    }
+
+    public Aluno[] getAluno() {
+        return aluno;
+    }
+
+    public void setAluno(Aluno[] aluno) {
+        this.aluno = aluno;
+    }
+
+    public int getMaximo() {
+        return maximo;
+    }
+
+    public void setMaximo(int maximo) {
+        this.maximo = maximo;
+    }
+
+    public int getAtual() {
+        return atual;
+    }
+
+    public void setAtual(int atual) {
+        this.atual = atual;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 }
