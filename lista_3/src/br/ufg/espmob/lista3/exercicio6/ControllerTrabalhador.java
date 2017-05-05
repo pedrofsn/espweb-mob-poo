@@ -101,7 +101,7 @@ public class ControllerTrabalhador {
         }
 
         if (!Utils.isNullOrEmpty(trabalhadorEscolhido)) {
-            Utils.print("O operador (" + trabalhadorEscolhido.getMatricula() + ") recebe o maior salário, que é de: " + Utils.getValorMonetario(trabalhadorEscolhido.getSalario()));
+            Utils.print("O operador " + trabalhadorEscolhido.getMatricula() + " recebe o maior salário, que é de: " + Utils.getValorMonetario(trabalhadorEscolhido.getSalario()));
         }
     }
 
