@@ -21,7 +21,15 @@ public class Candidato {
 
     @Override
     public String toString() {
-        return "INSCRIÇÃO: " + numeroInscricao + " | NOME: " + nome + " | NOTA: " + prova.getNota();
+        return "INSCRIÇÃO: " + numeroInscricao + " | NOME: " + nome + " | TELEFONE: " + telefone + " | NOTA: " + prova.getNota() + " | " + (prova.isNotaMaiorOuIgualMedia() ? "APROVADO" : "REPROVADO");
+    }
+
+    public Prova getProva() {
+        return prova;
+    }
+
+    public void setProva(Prova prova) {
+        this.prova = prova;
     }
 
     public int getNumeroInscricao() {

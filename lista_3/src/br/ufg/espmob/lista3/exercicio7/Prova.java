@@ -11,13 +11,15 @@ import java.util.List;
 public class Prova {
 
     private List<Questao> questoes;
+    private int notaMinimaParaAprovacao;
 
     public Prova() {
         List<Questao> questoes = new ArrayList<>();
-        for (int i = 0; i < 9; i++) {
+        for (int i = 0; i <= 9; i++) {
             questoes.add(new Questao());
         }
         this.questoes = questoes;
+        this.notaMinimaParaAprovacao = 6;
     }
 
     public int getNota() {
@@ -38,6 +40,13 @@ public class Prova {
         return -1;
     }
 
+    public boolean isNotaMaiorOuIgual(int valor) {
+        return getNota() >= valor;
+    }
+
+    public boolean isNotaMaiorOuIgualMedia() {
+        return isNotaMaiorOuIgual(notaMinimaParaAprovacao);
+    }
 
     public List<Questao> getQuestoes() {
         return questoes;
@@ -45,5 +54,13 @@ public class Prova {
 
     public void setQuestoes(List<Questao> questoes) {
         this.questoes = questoes;
+    }
+
+    public int getNotaMinimaParaAprovacao() {
+        return notaMinimaParaAprovacao;
+    }
+
+    public void setNotaMinimaParaAprovacao(int notaMinimaParaAprovacao) {
+        this.notaMinimaParaAprovacao = notaMinimaParaAprovacao;
     }
 }

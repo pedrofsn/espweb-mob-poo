@@ -11,13 +11,13 @@ public class Main {
     public static void main(String[] args) {
 
         List<Candidato> lista = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i <= 10; i++) {
             Candidato obj = new Candidato();
             lista.add(obj);
         }
 
         Controller controller = new Controller();
-        controller.printCandidatos(lista);
+        controller.fazTudo(lista);
     }
 
 }
