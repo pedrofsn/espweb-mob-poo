@@ -29,6 +29,10 @@ public abstract class Multimidia {
         comentarios.add("Perfeito");
     }
 
+    public void printar() {
+        System.out.println(toString() + "\n");
+    }
+
     @Override
     public String toString() {
         return titulo + " | " + ano + " | " + duracaoEmMinutos + " minutos | Comentários: " + getComentariosEmString();

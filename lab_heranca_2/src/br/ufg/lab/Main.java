@@ -1,9 +1,9 @@
 package br.ufg.lab;
 
-import br.ufg.lab.domain.Multimidia;
 import br.ufg.lab.model.Cd;
 import br.ufg.lab.model.Filme;
 import br.ufg.lab.model.Jogo;
+import br.ufg.lab.model.MinhaLista;
 
 /*
 *
@@ -16,21 +16,22 @@ import br.ufg.lab.model.Jogo;
 public class Main {
 
     public static void main(String[] args) {
-        for (int i = 0; i < 10; i++) {
-            printar(new Filme());
-            printar(new Cd());
-            printar(new Jogo());
-        }
+
+        MinhaLista minhaLista = new MinhaLista();
+
+        Jogo jogo = new Jogo();
+        Filme filme = new Filme();
+        Cd cd = new Cd();
+
+        minhaLista.add(jogo);
+        minhaLista.add(filme);
+        minhaLista.add(cd);
+        minhaLista.remove(cd);
+
+        System.out.println("Quantidade de Jogos: " + minhaLista.getQuantidadeJogo());
+        System.out.println("Quantidade de CD: " + minhaLista.getQuantidadeCd());
+        System.out.println("Quantidade de Filmes: " + minhaLista.getQuantidadeFilme());
     }
 
-    private static void printar(Multimidia multimidia) {
-        if (multimidia != null) {
 
-            if (multimidia instanceof Jogo) {
-                System.out.println("JOGO >>> " + multimidia.toString() + "\n");
-            }
-
-            System.out.println(multimidia.toString() + "\n");
-        }
-    }
 }

@@ -20,6 +20,11 @@ public class Jogo extends Multimidia {
         return "Exclusivo para " + plataforma.toUpperCase() + ": " + super.toString() + " | Número de jogadores: " + numeroJogadores;
     }
 
+    @Override
+    public void printar() {
+        System.out.println("JOGO >>> " + toString() + "\n");
+    }
+
     public int getNumeroJogadores() {
         return numeroJogadores;
     }
