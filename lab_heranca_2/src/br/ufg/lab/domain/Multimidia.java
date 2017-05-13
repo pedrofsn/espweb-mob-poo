@@ -19,9 +19,7 @@ public abstract class Multimidia {
     public Multimidia() {
         this.titulo = "Era uma vez " + getRandom().nextInt(15);
         this.ano = 1992 + getRandom().nextInt(15);
-        ;
         this.duracaoEmMinutos = getRandom().nextInt(120);
-        ;
         this.comentarios = new ArrayList<>();
 
         comentarios.add("Muito legal");
