@@ -1,4 +1,4 @@
-package br.ufg.lab;
+package br.ufg.lab.caso3;
 
 import java.util.ArrayList;
 import java.util.List;

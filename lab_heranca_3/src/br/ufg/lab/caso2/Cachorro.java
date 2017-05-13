@@ -1,4 +1,4 @@
-package br.ufg.lab;
+package br.ufg.lab.caso2;
 
 /**
  * Created by aluno on 13/05/17.
