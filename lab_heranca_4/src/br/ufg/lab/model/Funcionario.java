@@ -5,7 +5,12 @@ package br.ufg.lab.model;
  */
 public class Funcionario extends Pessoa {
 
-    protected float salario;
+    private float salario;
+
+    public Funcionario(String nome, Data nascimento, float salario) {
+        super(nome, nascimento);
+        this.salario = salario;
+    }
 
     public float calcularImposto() {
         return (salario * 3) / 100;
@@ -13,6 +18,14 @@ public class Funcionario extends Pessoa {
 
     @Override
     public void imprimirDados() {
+        System.out.println("O salário do funcionário " + getNome() + " é de " + salario + " fora o desconto de " + calcularImposto() + "\n");
+    }
 
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
     }
 }

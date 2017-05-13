@@ -8,6 +8,11 @@ public abstract class Pessoa {
     private String nome;
     private Data nascimento;
 
+    public Pessoa(String nome, Data nascimento) {
+        this.nome = nome;
+        this.nascimento = nascimento;
+    }
+
     public abstract void imprimirDados();
 
     public String getNome() {
