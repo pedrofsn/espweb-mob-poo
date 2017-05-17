@@ -6,4 +6,5 @@ package br.ufg.inf.pos.supermercado.utils;
 public abstract interface Constantes {
 
 
+    public static int VALOR_INVALIDO = -1;
 }

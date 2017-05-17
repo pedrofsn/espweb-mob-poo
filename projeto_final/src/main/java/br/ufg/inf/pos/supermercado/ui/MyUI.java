@@ -4,6 +4,7 @@ import br.ufg.inf.pos.supermercado.utils.Utils;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -12,6 +13,14 @@ import java.util.Scanner;
 public class MyUI {
 
     private static Scanner scanner = new Scanner(System.in);
+
+    protected static void print(List list) {
+        if (!Utils.isNullOrEmpty(list)) {
+            for (int i = 0; i < list.size(); i++) {
+                print(list.get(i).toString());
+            }
+        }
+    }
 
     protected static void print(Exception e) {
         if (!Utils.isNullOrEmpty(e)) {

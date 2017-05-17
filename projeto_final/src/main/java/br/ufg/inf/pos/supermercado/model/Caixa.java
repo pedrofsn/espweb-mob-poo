@@ -5,8 +5,12 @@ package br.ufg.inf.pos.supermercado.model;
  */
 public class Caixa {
 
-    // false = kg
-    public boolean isUnidade;
+    public boolean isUnidade; // false = kg
+    private int codigo;
+
+    public Caixa(int codigo) {
+        this.codigo = codigo;
+    }
 
     public boolean isUnidade() {
         return isUnidade;
