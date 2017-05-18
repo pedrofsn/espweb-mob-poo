@@ -3,6 +3,8 @@ package br.ufg.inf.pos.supermercado.ui;
 import br.ufg.inf.pos.supermercado.controller.ControllerLogin;
 import br.ufg.inf.pos.supermercado.domain.Sessao;
 import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
+import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
+import br.ufg.inf.pos.supermercado.model.Produto;
 import br.ufg.inf.pos.supermercado.utils.Constantes;
 import br.ufg.inf.pos.supermercado.utils.Utils;
 
@@ -92,13 +94,43 @@ public abstract class Menu extends MyUI {
     }
 
     private static void iniciarCadastroProduto() {
-        print("Cadastrar produto:");
-        print("Código:");
-        int codigo = getScanner().nextInt();
-        print("Nome:");
-        String nome = getScanner().next();
+        Produto produto = new Produto();
 
-//        if (Sessao.getInstance().getEstoque().getProdutosEmEstoque()) TODO finalizar validação
+        print("Cadastrar produto:");
+        print("[SEPARE AS CASAS DECIMAIS POR ',']");
+
+        print("Código:");
+        produto.setCodigo(getScanner().nextInt());
+
+        print("Nome:");
+        produto.setNome(getScanner().next());
+
+        boolean isPorKg = getRespostaSimOuNao("Este produto é vendido por Kg?");
+
+        if (isPorKg) {
+            print("Insira o peso do produto:");
+            produto.setPeso(getScanner().nextDouble());
+        } else {
+            print("Insira a quantidade do produto:");
+            produto.setQuantidade(getScanner().nextInt());
+        }
+
+        print("Insira o preço do" + (isPorKg ? " Kg:" : " produto:"));
+        produto.setPreco(getScanner().nextDouble());
+
+        try {
+            Sessao.getInstance().getEstoque().adicionarProdutoEmEstoque(produto);
+            print("O produto abaixo foi cadastrado com sucesso!");
+            print(produto.toString());
+            print("\n");
+            print("\n");
+        } catch (ValidacaoException e) {
+            print(e);
+            iniciarCadastroProduto();
+        } catch (Exception e) {
+            print(e);
+        }
+        iniciarMenuGerente();
     }
 
     private static void iniciarMenuFuncionario() {
