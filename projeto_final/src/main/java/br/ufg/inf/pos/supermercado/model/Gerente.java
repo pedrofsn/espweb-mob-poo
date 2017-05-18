@@ -7,8 +7,8 @@ import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
  */
 public class Gerente extends Funcionario {
 
-    public Gerente(int codigo) {
-        super(codigo);
+    public Gerente(int codigo, String nome) {
+        super(codigo, nome);
     }
 
     @Override

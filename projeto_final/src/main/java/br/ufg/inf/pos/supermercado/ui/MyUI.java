@@ -1,5 +1,6 @@
 package br.ufg.inf.pos.supermercado.ui;
 
+import br.ufg.inf.pos.supermercado.utils.Constantes;
 import br.ufg.inf.pos.supermercado.utils.Utils;
 
 import java.math.BigDecimal;
@@ -62,6 +63,24 @@ public class MyUI {
         if (!Utils.isNullOrEmpty(string)) {
             System.out.println(string.trim());
         }
+    }
+
+    protected static String listToString(List<Integer> l) {
+        if (!Utils.isNullOrEmpty(l)) {
+            StringBuffer stringBuffer = new StringBuffer();
+
+            for (int i = 0; i < l.size(); i++) {
+                Integer obj = l.get(i);
+                stringBuffer.append(obj);
+
+                if (l.size() - 1 != i) {
+                    stringBuffer.append(", ");
+                }
+            }
+
+            return stringBuffer.toString();
+        }
+        return Constantes.STRING_VAZIA;
     }
 
     protected static void limparTela() {
