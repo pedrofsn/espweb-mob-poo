@@ -30,6 +30,10 @@ public class Produto {
         this.preco = preco;
     }
 
+    public boolean isPorKg() {
+        return !Utils.isNullOrEmpty(peso) && Utils.isNullOrEmpty(quantidade);
+    }
+
     public int getCodigo() {
         return codigo;
     }
@@ -68,10 +72,6 @@ public class Produto {
 
     public void setPreco(double preco) {
         this.preco = preco;
-    }
-
-    public boolean isPorKg() {
-        return !Utils.isNullOrEmpty(peso) && Utils.isNullOrEmpty(quantidade);
     }
 
     @Override

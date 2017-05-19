@@ -24,7 +24,6 @@ public abstract class Menu extends Ui {
     }
 
     private static void iniciarLogin() {
-        limparTela();
         print("Seja bem-vindo ao sistema de vendas Compre+");
         print("\n");
         print("\tRealize o login para entrar no sistema");
@@ -40,6 +39,7 @@ public abstract class Menu extends Ui {
                 iniciarMenuUsuario(tipoUsuario);
             }
         } catch (Exception e) {
+            limparTela();
             print(e);
             iniciarLogin();
         }
@@ -135,7 +135,7 @@ public abstract class Menu extends Ui {
         iniciarMenuGerente();
     }
 
-    public static void iniciarMenuFuncionario() {
+    private static void iniciarMenuFuncionario() {
         try {
             List<Integer> codigosFuncionairosDisponiveis = Sessao.getInstance().getCodigosFuncionariosDisponiveis();
             List<Integer> codigosCaixasDisponiveis = Sessao.getInstance().getCodigosCaixasDisponiveis();
@@ -206,22 +206,27 @@ public abstract class Menu extends Ui {
 
     }
 
-    private static void iniciarMenuCliente() {
-        boolean travarNoMenu = true;
-        while (travarNoMenu) {
-            print("\n\n");
-            print("< Menu do Cliente >");
-            print("1 - Listar produtos em estoque");
-            print("2 - Efetuar compra de produtos");
-            print("9 - Sair");
-            print("\n\n");
-            print("Opção:");
-            int opcao = getScanner().nextInt();
-            tratarMenuCliente(opcao);
+    public static void iniciarMenuCliente() {
+        if (Sessao.getInstance().hasFuncionarioEmAtendendimento()) {
+            boolean travarNoMenu = true;
+            while (travarNoMenu) {
+                print("\n\n");
+                print("< Menu do Cliente >");
+                print("1 - Listar produtos em estoque");
+                print("2 - Efetuar compra de produtos");
+                print("9 - Sair");
+                print("\n\n");
+                print("Opção:");
+                int opcao = getScanner().nextInt();
+                tratarMenuCliente(opcao);
 
-            if (opcao == 9) {
-                break;
+                if (opcao == 9) {
+                    break;
+                }
             }
+        } else {
+            print("[SEM FUNCIONÁRIOS PARA ATENDIMENTO]");
+            iniciarLogin();
         }
     }
 
@@ -243,7 +248,37 @@ public abstract class Menu extends Ui {
     }
 
     private static void iniciarCompra() {
+        print("\n\n");
+        List<Produto> produtosEmEstoque = Sessao.getInstance().getEstoque().getProdutosEmEstoque();
+        print(produtosEmEstoque);
+        print("\n\n");
 
+        print("<Opções>");
+        print("111 - Selecionar o método de pagamento da compra");
+        print("999 - Desistir da compra");
+
+        boolean travar = true;
+        while (travar) {
+            print("\n\n");
+            print("Digite o código do produto desejado ou uma das opções acima: ");
+            print("\n\n");
+            int codigoProduto = getScanner().nextInt();
+            tratarMenuCliente(codigoProduto);
+
+            if (111 == codigoProduto) {
+                travar = false;
+                break;
+
+            } else if (999 == codigoProduto) {
+                iniciarMenuCliente();
+                travar = false;
+                break;
+            } else {
+                // ADICIONAR PRODUTO
+
+
+            }
+        }
     }
 
 }

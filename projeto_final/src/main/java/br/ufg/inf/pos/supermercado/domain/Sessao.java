@@ -1,10 +1,7 @@
 package br.ufg.inf.pos.supermercado.domain;
 
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
-import br.ufg.inf.pos.supermercado.model.Caixa;
-import br.ufg.inf.pos.supermercado.model.Estoque;
-import br.ufg.inf.pos.supermercado.model.Funcionario;
-import br.ufg.inf.pos.supermercado.model.Gerente;
+import br.ufg.inf.pos.supermercado.model.*;
 import br.ufg.inf.pos.supermercado.utils.Utils;
 
 import java.util.ArrayList;
@@ -22,6 +19,7 @@ public class Sessao extends Mock {
     private Gerente gerente;
     private Estoque estoque;
     private List<Funcionario> funcionarios;
+    private List<Cliente> clientes;
     private List<Caixa> caixas;
     private Map<Integer, Integer> funcionariosEmAtendimento;
 
@@ -29,6 +27,7 @@ public class Sessao extends Mock {
         gerente = new Gerente(0, "Pedro");
         estoque = new Estoque();
         funcionarios = new ArrayList<>();
+        clientes = new ArrayList<>();
         caixas = new ArrayList<>();
         funcionariosEmAtendimento = new HashMap<>();
         popularValoresDefault();
@@ -49,6 +48,9 @@ public class Sessao extends Mock {
         funcionarios.add(new Funcionario(2, "Edvaldo"));
         funcionarios.add(new Funcionario(3, "Beatriz"));
         funcionarios.add(new Funcionario(4, "Lorene"));
+
+        //TODO: REMOVER, apenas pra facilitar os testes
+        funcionariosEmAtendimento.put(1, 2);
     }
 
     public Gerente getGerente() {
@@ -146,5 +148,9 @@ public class Sessao extends Mock {
 
     public void posicionarFuncionarioEmAtendimento(int funcionario, int caixa) {
         funcionariosEmAtendimento.put(funcionario, caixa);
+    }
+
+    public boolean hasFuncionarioEmAtendendimento() {
+        return funcionariosEmAtendimento.size() > 0;
     }
 }

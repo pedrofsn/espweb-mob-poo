@@ -30,12 +30,16 @@ public class Estoque extends Mock {
             produtosEmEstoque.add(new Produto(5, "Cuscuz", 1, 10.00));
             produtosEmEstoque.add(new Produto(6, "Requeijão", 2, 10.00));
             produtosEmEstoque.add(new Produto(7, "Fralda", 3, 10.00));
-            produtosEmEstoque.add(new Produto(7, "Laranja", 5.5, 10.00));
+            produtosEmEstoque.add(new Produto(8, "Laranja", 5.5, 10.00));
         }
     }
 
     public List<Produto> getProdutosEmEstoque() {
         return produtosEmEstoque;
+    }
+
+    public Produto getProdutoDoEstoque(int codigo) {
+        return produtosEmEstoque.get(codigo);
     }
 
     public void adicionarProdutoEmEstoque(Produto novo) throws ValidacaoException {
@@ -52,8 +56,12 @@ public class Estoque extends Mock {
                 throw new ValidacaoException("Produto sem quantidade");
             }
 
-            if (Utils.isNullOrEmpty(novo.getPeso()) && Utils.isNullOrEmpty(novo.getPreco())) {
-                throw new ValidacaoException("Produto sem nome");
+            if (Utils.isNullOrEmpty(novo.getPeso())) {
+                throw new ValidacaoException("Produto sem peso");
+            }
+
+            if (Utils.isNullOrEmpty(novo.getPreco())) {
+                throw new ValidacaoException("Produto sem preço");
             }
 
             if (hasProdutoEmEstoque(novo)) {
@@ -77,4 +85,6 @@ public class Estoque extends Mock {
 
         return false;
     }
+
+
 }
