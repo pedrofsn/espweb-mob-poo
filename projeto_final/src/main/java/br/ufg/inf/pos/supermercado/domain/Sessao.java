@@ -15,17 +15,31 @@ import java.util.Map;
 /**
  * Created by pedrofsn on 16/05/2017.
  */
-public class Sessao {
+public class Sessao extends Mock {
 
     private static Sessao ourInstance = new Sessao();
 
-    private Gerente gerente = new Gerente(0, "Pedro");
-    private Estoque estoque = new Estoque();
-    private List<Funcionario> funcionarios = new ArrayList<>();
-    private List<Caixa> caixas = new ArrayList<>();
-    private Map<Integer, Integer> funcionariosEmAtendimento = new HashMap<>();
+    private Gerente gerente;
+    private Estoque estoque;
+    private List<Funcionario> funcionarios;
+    private List<Caixa> caixas;
+    private Map<Integer, Integer> funcionariosEmAtendimento;
 
     private Sessao() {
+        gerente = new Gerente(0, "Pedro");
+        estoque = new Estoque();
+        funcionarios = new ArrayList<>();
+        caixas = new ArrayList<>();
+        funcionariosEmAtendimento = new HashMap<>();
+        popularValoresDefault();
+    }
+
+    public static Sessao getInstance() {
+        return ourInstance;
+    }
+
+    @Override
+    public void popularValoresDefault() {
         caixas.add(new Caixa(0));
         caixas.add(new Caixa(1));
         caixas.add(new Caixa(2));
@@ -35,10 +49,6 @@ public class Sessao {
         funcionarios.add(new Funcionario(2, "Edvaldo"));
         funcionarios.add(new Funcionario(3, "Beatriz"));
         funcionarios.add(new Funcionario(4, "Lorene"));
-    }
-
-    public static Sessao getInstance() {
-        return ourInstance;
     }
 
     public Gerente getGerente() {
@@ -134,7 +144,7 @@ public class Sessao {
         return estoque;
     }
 
-    public Map<Integer, Integer> getFuncionariosEmAtendimento() {
-        return funcionariosEmAtendimento;
+    public void posicionarFuncionarioEmAtendimento(int funcionario, int caixa) {
+        funcionariosEmAtendimento.put(funcionario, caixa);
     }
 }

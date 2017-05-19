@@ -1,5 +1,6 @@
 package br.ufg.inf.pos.supermercado.model;
 
+import br.ufg.inf.pos.supermercado.domain.Mock;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.utils.Constantes;
 import br.ufg.inf.pos.supermercado.utils.Utils;
@@ -10,15 +11,16 @@ import java.util.List;
 /**
  * Created by pedrofsn on 16/05/2017.
  */
-public class Estoque {
+public class Estoque extends Mock {
 
     private List<Produto> produtosEmEstoque = new ArrayList<>();
 
     public Estoque() {
-        popularEstoque();
+        popularValoresDefault();
     }
 
-    private void popularEstoque() {
+    @Override
+    public void popularValoresDefault() {
         if (Utils.isNullOrEmpty(produtosEmEstoque)) {
             produtosEmEstoque.add(new Produto(0, "Arroz", 9, 10.00));
             produtosEmEstoque.add(new Produto(1, "Feijão", 8, 10.00));

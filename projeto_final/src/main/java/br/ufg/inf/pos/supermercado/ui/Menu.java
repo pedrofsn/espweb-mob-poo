@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by pedrofsn on 16/05/2017.
  */
-public abstract class Menu extends MyUI {
+public abstract class Menu extends Ui {
 
     private static ControllerLogin controllerLogin = new ControllerLogin();
 
@@ -161,7 +161,7 @@ public abstract class Menu extends MyUI {
                 Caixa caixaSelecionado = Sessao.getInstance().getCaixaDisponivel(codigoCaixaSelecionado);
                 print("\n");
 
-                Sessao.getInstance().getFuncionariosEmAtendimento().put(funcionarioSelecionado.getCodigo(), caixaSelecionado.getCodigo());
+                Sessao.getInstance().posicionarFuncionarioEmAtendimento(funcionarioSelecionado.getCodigo(), caixaSelecionado.getCodigo());
 
                 boolean travarNoMenu = true;
                 while (travarNoMenu) {
@@ -207,6 +207,42 @@ public abstract class Menu extends MyUI {
     }
 
     private static void iniciarMenuCliente() {
+        boolean travarNoMenu = true;
+        while (travarNoMenu) {
+            print("\n\n");
+            print("< Menu do Cliente >");
+            print("1 - Listar produtos em estoque");
+            print("2 - Efetuar compra de produtos");
+            print("9 - Sair");
+            print("\n\n");
+            print("Opção:");
+            int opcao = getScanner().nextInt();
+            tratarMenuCliente(opcao);
+
+            if (opcao == 9) {
+                break;
+            }
+        }
+    }
+
+    private static void tratarMenuCliente(int opcao) {
+        print("\n\n");
+        switch (opcao) {
+            case 1:
+                print(Sessao.getInstance().getEstoque().getProdutosEmEstoque());
+                break;
+            case 2:
+                iniciarCompra();
+                break;
+            case 9:
+                print("Você saiu do sistema");
+                inicializarUI();
+                break;
+        }
+
+    }
+
+    private static void iniciarCompra() {
 
     }
 

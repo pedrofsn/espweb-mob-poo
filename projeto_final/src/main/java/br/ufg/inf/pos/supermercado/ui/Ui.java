@@ -11,7 +11,7 @@ import java.util.Scanner;
 /**
  * Created by pedrofsn on 16/05/2017.
  */
-public class MyUI {
+public class Ui {
 
     private static final String[] CASOS_POSITIVOS = new String[]{"Sim", "Ok", "S", "1"};
     private static final String[] CASOS_NEGATIVOS = new String[]{"Não", "not", "N", "0"};
