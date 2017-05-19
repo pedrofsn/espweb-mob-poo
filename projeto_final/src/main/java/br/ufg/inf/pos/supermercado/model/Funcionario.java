@@ -27,4 +27,9 @@ public class Funcionario extends Pessoa {
     public TipoUsuario getTipo() {
         return TipoUsuario.FUNCIONARIO;
     }
+
+    @Override
+    public String toString() {
+        return "CÓDIGO: " + codigo + " | FUNCIONÁRIO: " + getNome();
+    }
 }

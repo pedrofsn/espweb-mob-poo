@@ -1,5 +1,6 @@
 package br.ufg.inf.pos.supermercado.model;
 
+import br.ufg.inf.pos.supermercado.domain.Sessao;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.utils.Constantes;
 import br.ufg.inf.pos.supermercado.utils.Utils;
@@ -15,6 +16,7 @@ public class Compra {
     private Map<Integer, Double> carrinho = new HashMap<>();
     private int tipoPagamento = Constantes.FORMA_PAGAMENTO_CARTAO;
     private Integer codigoCaixa = null;
+    private Integer codigoFuncionario = null;
 
     public void adicionarProdutoNaCompra(Produto produtoSelecionado, Double quantiaDesejada) throws ValidacaoException {
         if (!Utils.isNullOrEmpty(produtoSelecionado)) {
@@ -29,6 +31,12 @@ public class Compra {
             throw new ValidacaoException("Não foi possível adicionar o produto ao carrinho: produto inválido");
         }
 
+    }
+
+    public void executarVenda(Caixa caixa) {
+        if (!Utils.isNullOrEmpty(caixa) && caixa.getCodigo() == codigoCaixa) {
+            this.codigoFuncionario = Sessao.getInstance().getCodigoFuncionarioDoCaixaEmAtendimento(codigoCaixa);
+        }
     }
 
     public boolean isCaixaSelecionado() {

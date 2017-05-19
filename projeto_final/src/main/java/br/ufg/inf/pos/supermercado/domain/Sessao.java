@@ -2,10 +2,10 @@ package br.ufg.inf.pos.supermercado.domain;
 
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.model.*;
+import br.ufg.inf.pos.supermercado.utils.CustomHashMap;
 import br.ufg.inf.pos.supermercado.utils.Utils;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,7 +21,7 @@ public class Sessao extends Mock {
     private List<Funcionario> funcionarios;
     private List<Cliente> clientes;
     private List<Caixa> caixas;
-    private Map<Integer, Integer> funcionariosEmAtendimento;
+    private CustomHashMap<Integer, Integer> vinculoFuncionarioComCaixa;
 
     private Sessao() {
         gerente = new Gerente(0, "Pedro");
@@ -29,7 +29,7 @@ public class Sessao extends Mock {
         funcionarios = new ArrayList<>();
         clientes = new ArrayList<>();
         caixas = new ArrayList<>();
-        funcionariosEmAtendimento = new HashMap<>();
+        vinculoFuncionarioComCaixa = new CustomHashMap<>();
         popularValoresDefault();
     }
 
@@ -50,7 +50,7 @@ public class Sessao extends Mock {
         funcionarios.add(new Funcionario(4, "Lorene"));
 
         //TODO: REMOVER, apenas pra facilitar os testes
-        funcionariosEmAtendimento.put(1, 2);
+        vinculoFuncionarioComCaixa.put(1, 2);
     }
 
     public Gerente getGerente() {
@@ -58,8 +58,8 @@ public class Sessao extends Mock {
     }
 
     public Caixa getCaixaDisponivel(int codigo) throws ValidacaoException {
-        if (!Utils.isNullOrEmpty(funcionariosEmAtendimento) && funcionariosEmAtendimento.size() > 0) {
-            for (Map.Entry<Integer, Integer> entry : funcionariosEmAtendimento.entrySet()) {
+        if (!Utils.isNullOrEmpty(vinculoFuncionarioComCaixa) && vinculoFuncionarioComCaixa.size() > 0) {
+            for (Map.Entry<Integer, Integer> entry : vinculoFuncionarioComCaixa.entrySet()) {
                 if (codigo == entry.getValue()) {
                     throw new ValidacaoException("Caixa em uso");
                 }
@@ -70,8 +70,8 @@ public class Sessao extends Mock {
     }
 
     public Funcionario getFuncionarioDisponivel(int codigo) throws ValidacaoException {
-        if (!Utils.isNullOrEmpty(funcionariosEmAtendimento) && funcionariosEmAtendimento.size() > 0) {
-            for (Map.Entry<Integer, Integer> entry : funcionariosEmAtendimento.entrySet()) {
+        if (!Utils.isNullOrEmpty(vinculoFuncionarioComCaixa) && vinculoFuncionarioComCaixa.size() > 0) {
+            for (Map.Entry<Integer, Integer> entry : vinculoFuncionarioComCaixa.entrySet()) {
                 if (codigo == entry.getKey()) {
                     throw new ValidacaoException("Funcionário em atendimento");
                 }
@@ -80,31 +80,6 @@ public class Sessao extends Mock {
 
         return funcionarios.get(codigo);
     }
-
-//    public Funcionario getFuncionario(int codigo) {
-//        if (!Utils.isNullOrEmpty(funcionariosEmAtendimento))
-//            for (Map.Entry<Integer, Integer> entry : funcionariosEmAtendimento.entrySet()) {
-//                System.out.println(entry.getKey() + "/" + entry.getValue());
-//
-//                if (codigo == entry.getKey()) {
-//                    return funcionarios.get(codigo);
-//                }
-//            }
-//        return null;
-//    }
-//
-//    public List<Integer> getCaixasDisponiveis() {
-//        List<Integer> disponiveis = new ArrayList<>();
-//
-//        for (Caixa c : caixas) {
-//            if (Utils.isNullOrEmpty(getCaixa(c.getCodigo()))) {
-//                disponiveis.add(c.getCodigo());
-//            }
-//        }
-//
-//        return disponiveis;
-//    }
-
 
     public List<Integer> getCodigosCaixasAbertosParaAtendimento() {
         List<Integer> codigosCaixasSemAlocacao = getCodigosCaixasSemAlocacao();
@@ -123,8 +98,8 @@ public class Sessao extends Mock {
         List<Integer> disponiveis = new ArrayList<>();
 
         for (Caixa c : caixas) {
-            if (!Utils.isNullOrEmpty(funcionariosEmAtendimento) && funcionariosEmAtendimento.size() > 0) {
-                for (Map.Entry<Integer, Integer> entry : funcionariosEmAtendimento.entrySet()) {
+            if (!Utils.isNullOrEmpty(vinculoFuncionarioComCaixa) && vinculoFuncionarioComCaixa.size() > 0) {
+                for (Map.Entry<Integer, Integer> entry : vinculoFuncionarioComCaixa.entrySet()) {
                     if (c.getCodigo() != entry.getValue()) {
                         disponiveis.add(c.getCodigo());
                     }
@@ -141,8 +116,8 @@ public class Sessao extends Mock {
         List<Integer> disponiveis = new ArrayList<>();
 
         for (Funcionario f : funcionarios) {
-            if (!Utils.isNullOrEmpty(funcionariosEmAtendimento) && funcionariosEmAtendimento.size() > 0) {
-                for (Map.Entry<Integer, Integer> entry : funcionariosEmAtendimento.entrySet()) {
+            if (!Utils.isNullOrEmpty(vinculoFuncionarioComCaixa) && vinculoFuncionarioComCaixa.size() > 0) {
+                for (Map.Entry<Integer, Integer> entry : vinculoFuncionarioComCaixa.entrySet()) {
                     if (f.getCodigo() != entry.getKey()) {
                         disponiveis.add(f.getCodigo());
                     }
@@ -160,10 +135,26 @@ public class Sessao extends Mock {
     }
 
     public void posicionarFuncionarioEmAtendimento(int funcionario, int caixa) {
-        funcionariosEmAtendimento.put(funcionario, caixa);
+        vinculoFuncionarioComCaixa.put(funcionario, caixa);
     }
 
     public boolean hasFuncionarioEmAtendendimento() {
-        return funcionariosEmAtendimento.size() > 0;
+        return vinculoFuncionarioComCaixa.size() > 0;
+    }
+
+    public List<String> getFuncionarios() {
+        List<String> lista = new ArrayList<>();
+        for (Funcionario f : funcionarios) {
+            lista.add(f.toString());
+        }
+        return lista;
+    }
+
+    public Integer getCodigoCaixaDoFuncionarioEmAtendimento(int codigo) {
+        return vinculoFuncionarioComCaixa.get(codigo);
+    }
+
+    public Integer getCodigoFuncionarioDoCaixaEmAtendimento(int codigo) {
+        return vinculoFuncionarioComCaixa.getKey(codigo);
     }
 }
