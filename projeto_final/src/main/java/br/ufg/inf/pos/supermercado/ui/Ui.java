@@ -6,6 +6,7 @@ import br.ufg.inf.pos.supermercado.utils.Utils;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -40,6 +41,17 @@ public class Ui {
         }
 
         return false;
+    }
+
+    protected static void print(Map<Integer, Double> carrinho) {
+        if (!Utils.isNullOrEmpty(carrinho)) {
+            print("\n\n");
+            print("<Carrinho>");
+            for (Map.Entry<Integer, Double> item : carrinho.entrySet()) {
+                print("Produto: " + item.getKey() + " / Quantidade: " + item.getValue());
+            }
+            print("\n\n");
+        }
     }
 
     protected static void print(List list) {

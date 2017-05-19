@@ -8,4 +8,7 @@ public abstract interface Constantes {
 
     public static final int VALOR_INVALIDO = -1;
     public static final String STRING_VAZIA = "";
+
+    public static final int FORMA_PAGAMENTO_CARTAO = 0;
+    public static final int FORMA_PAGAMENTO_DINHEIRO = 1;
 }

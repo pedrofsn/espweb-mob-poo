@@ -1,7 +1,5 @@
 package br.ufg.inf.pos.supermercado.model;
 
-import br.ufg.inf.pos.supermercado.utils.Utils;
-
 /**
  * Created by pedrofsn on 16/05/2017.
  */
@@ -9,29 +7,22 @@ public class Produto {
 
     private int codigo;
     private String nome;
-    private Integer quantidade;
-    private Double peso;
+    private double quantidade;
     private double preco;
 
     public Produto() {
     }
 
-    public Produto(int codigo, String nome, Integer quantidade, double preco) {
+    public Produto(int codigo, String nome, double quantidade, double preco) {
         this.codigo = codigo;
         this.nome = nome;
         this.quantidade = quantidade;
         this.preco = preco;
     }
 
-    public Produto(int codigo, String nome, Double peso, double preco) {
-        this.codigo = codigo;
-        this.nome = nome;
-        this.peso = peso;
-        this.preco = preco;
-    }
-
     public boolean isPorKg() {
-        return !Utils.isNullOrEmpty(peso) && Utils.isNullOrEmpty(quantidade);
+        int inteiro = (int) quantidade;
+        return quantidade - inteiro > 0;
     }
 
     public int getCodigo() {
@@ -50,20 +41,12 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Integer getQuantidade() {
+    public double getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(Integer quantidade) {
+    public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
-    }
-
-    public Double getPeso() {
-        return peso;
-    }
-
-    public void setPeso(Double peso) {
-        this.peso = peso;
     }
 
     public double getPreco() {
@@ -76,6 +59,7 @@ public class Produto {
 
     @Override
     public String toString() {
-        return "CÓDIGO: " + codigo + " | NOME: " + nome + " | " + (isPorKg() ? "PESO" : "QUANTIDADE") + ": " + (isPorKg() ? peso : quantidade) + " | Preço: " + preco + " | Por Kg: " + (isPorKg() ? "Sim" : "Não");
+        String mensagem = (isPorKg() ? "PESO" : "QUANTIDADE") + ": " + quantidade;
+        return "CÓDIGO: " + codigo + " | NOME: " + nome + " | Preço: " + preco + " | Por Kg: " + (isPorKg() ? "Sim" : "Não") + " | " + mensagem;
     }
 }

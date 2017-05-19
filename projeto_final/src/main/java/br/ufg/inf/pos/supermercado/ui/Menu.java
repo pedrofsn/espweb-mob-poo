@@ -5,6 +5,7 @@ import br.ufg.inf.pos.supermercado.domain.Sessao;
 import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.model.Caixa;
+import br.ufg.inf.pos.supermercado.model.Compra;
 import br.ufg.inf.pos.supermercado.model.Funcionario;
 import br.ufg.inf.pos.supermercado.model.Produto;
 import br.ufg.inf.pos.supermercado.utils.Constantes;
@@ -108,14 +109,18 @@ public abstract class Menu extends Ui {
         produto.setNome(getScanner().next());
 
         boolean isPorKg = getRespostaSimOuNao("Este produto é vendido por Kg?");
+        double quantidade = 0.0;
 
         if (isPorKg) {
             print("Insira o peso do produto:");
-            produto.setPeso(getScanner().nextDouble());
+            quantidade = getScanner().nextDouble();
         } else {
             print("Insira a quantidade do produto:");
-            produto.setQuantidade(getScanner().nextInt());
+            quantidade = getScanner().nextDouble();
+            quantidade = (int) quantidade;
         }
+
+        produto.setQuantidade(quantidade);
 
         print("Insira o preço do" + (isPorKg ? " Kg:" : " produto:"));
         produto.setPreco(getScanner().nextDouble());
@@ -163,8 +168,7 @@ public abstract class Menu extends Ui {
 
                 Sessao.getInstance().posicionarFuncionarioEmAtendimento(funcionarioSelecionado.getCodigo(), caixaSelecionado.getCodigo());
 
-                boolean travarNoMenu = true;
-                while (travarNoMenu) {
+                while (true) {
                     print("\n\n");
                     print("< Menu do Funcionário " + funcionarioSelecionado.getNome() + ">");
                     print("1 - Listar produtos em estoque");
@@ -248,37 +252,53 @@ public abstract class Menu extends Ui {
     }
 
     private static void iniciarCompra() {
-        print("\n\n");
         List<Produto> produtosEmEstoque = Sessao.getInstance().getEstoque().getProdutosEmEstoque();
-        print(produtosEmEstoque);
-        print("\n\n");
+        Compra compra = new Compra();
 
-        print("<Opções>");
-        print("111 - Selecionar o método de pagamento da compra");
-        print("999 - Desistir da compra");
+        laco:
+        while (true) {
+            print("\n\n");
+            print(produtosEmEstoque);
+            print("\n\n");
 
-        boolean travar = true;
-        while (travar) {
+            print("<Opções>");
+            print("111 - Alterar método de pagamento atual <" + (compra.isCartao() ? "Cartão" : "Dinheiro") + ">");
+            print("222 - Selecionar caixa <?>");
+            print("333 - Finalizar compra");
+            print("999 - Desistir da compra");
+            print(compra.getCarrinho());
             print("\n\n");
             print("Digite o código do produto desejado ou uma das opções acima: ");
             print("\n\n");
-            int codigoProduto = getScanner().nextInt();
-            tratarMenuCliente(codigoProduto);
+            int codigo = getScanner().nextInt();
 
-            if (111 == codigoProduto) {
-                travar = false;
-                break;
+            switch (codigo) {
+                case 111:
+                    compra.alterarTipoPagamento();
+                    break;
+                case 222:
+                    break;
+                case 333:
+                    break;
+                case 999:
+                    compra = null;
+                    iniciarMenuCliente();
+                    break laco;
+                default:
+                    print("Digite o peso/quantidade desejada: ");
+                    double quantidade = getScanner().nextDouble();
 
-            } else if (999 == codigoProduto) {
-                iniciarMenuCliente();
-                travar = false;
-                break;
-            } else {
-                // ADICIONAR PRODUTO
-
-
+                    Produto produto = null;
+                    if (codigo <= produtosEmEstoque.size() - 1) {
+                        produto = produtosEmEstoque.get(codigo);
+                    }
+                    try {
+                        compra.adicionarProdutoNaCompra(produto, quantidade);
+                    } catch (ValidacaoException e) {
+                        print(e);
+                    }
+                    break;
             }
         }
     }
-
 }

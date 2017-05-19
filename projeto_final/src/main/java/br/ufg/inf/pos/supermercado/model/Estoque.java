@@ -56,10 +56,6 @@ public class Estoque extends Mock {
                 throw new ValidacaoException("Produto sem quantidade");
             }
 
-            if (Utils.isNullOrEmpty(novo.getPeso())) {
-                throw new ValidacaoException("Produto sem peso");
-            }
-
             if (Utils.isNullOrEmpty(novo.getPreco())) {
                 throw new ValidacaoException("Produto sem preço");
             }
