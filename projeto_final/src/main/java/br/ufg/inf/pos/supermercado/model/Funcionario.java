@@ -8,20 +8,11 @@ import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
  */
 public class Funcionario extends Pessoa {
 
-    private boolean disponivel;
     private int codigo;
 
     public Funcionario(int codigo, String nome) {
         setNome(nome);
         this.codigo = codigo;
-    }
-
-    public boolean isDisponivel() {
-        return disponivel;
-    }
-
-    public void setDisponivel(boolean disponivel) {
-        this.disponivel = disponivel;
     }
 
     public int getCodigo() {
