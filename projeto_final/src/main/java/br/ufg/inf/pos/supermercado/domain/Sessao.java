@@ -106,7 +106,20 @@ public class Sessao extends Mock {
 //    }
 
 
-    public List<Integer> getCodigosCaixasDisponiveis() {
+    public List<Integer> getCodigosCaixasAbertosParaAtendimento() {
+        List<Integer> codigosCaixasSemAlocacao = getCodigosCaixasSemAlocacao();
+        List<Integer> todosCaixas = new ArrayList<>();
+
+        for (Caixa caixa : caixas) {
+            todosCaixas.add(caixa.getCodigo());
+        }
+
+        List<Integer> temp = new ArrayList<>(todosCaixas);
+        temp.removeAll(codigosCaixasSemAlocacao);
+        return temp;
+    }
+
+    public List<Integer> getCodigosCaixasSemAlocacao() {
         List<Integer> disponiveis = new ArrayList<>();
 
         for (Caixa c : caixas) {
@@ -124,7 +137,7 @@ public class Sessao extends Mock {
         return disponiveis;
     }
 
-    public List<Integer> getCodigosFuncionariosDisponiveis() {
+    public List<Integer> getCodigosFuncionariosSemAlocacao() {
         List<Integer> disponiveis = new ArrayList<>();
 
         for (Funcionario f : funcionarios) {

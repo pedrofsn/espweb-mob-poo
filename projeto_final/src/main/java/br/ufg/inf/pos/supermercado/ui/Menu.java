@@ -142,24 +142,24 @@ public abstract class Menu extends Ui {
 
     private static void iniciarMenuFuncionario() {
         try {
-            List<Integer> codigosFuncionairosDisponiveis = Sessao.getInstance().getCodigosFuncionariosDisponiveis();
-            List<Integer> codigosCaixasDisponiveis = Sessao.getInstance().getCodigosCaixasDisponiveis();
+            List<Integer> funcionariosSemAlocacao = Sessao.getInstance().getCodigosFuncionariosSemAlocacao();
+            List<Integer> caixasSemAlocacao = Sessao.getInstance().getCodigosCaixasSemAlocacao();
 
-            if (Utils.isNullOrEmpty(codigosFuncionairosDisponiveis)) {
+            if (Utils.isNullOrEmpty(funcionariosSemAlocacao)) {
                 print("Sem FUNCIONÁRIOS disponíveis no momento, tente mais tarde");
 
-            } else if (Utils.isNullOrEmpty(codigosCaixasDisponiveis)) {
+            } else if (Utils.isNullOrEmpty(caixasSemAlocacao)) {
                 print("Sem CAIXAS disponíveis no momento, tente mais tarde");
 
             } else {
-                print("Selecione um código de FUNCIONÁRIO que esteja disponível para para trabalhar/assumir o papel de caixa [" + listToString(codigosFuncionairosDisponiveis) + "]:");
+                print("Selecione um código de FUNCIONÁRIO que esteja disponível para para trabalhar/assumir o papel de caixa [" + listToString(funcionariosSemAlocacao) + "]:");
                 int codigoFuncionarioSelecionado = getScanner().nextInt();
                 Funcionario funcionarioSelecionado = Sessao.getInstance().getFuncionarioDisponivel(codigoFuncionarioSelecionado);
                 print("\n");
                 print("Você está usando o sistema como o funcionário " + funcionarioSelecionado.getNome());
                 print("\n");
 
-                print("Selecione um código de CAIXA que esteja disponível para ser assumido pelo funcionário " + funcionarioSelecionado.getNome() + " [" + listToString(codigosCaixasDisponiveis) + "]:");
+                print("Selecione um código de CAIXA que esteja disponível para ser assumido pelo funcionário " + funcionarioSelecionado.getNome() + " [" + listToString(caixasSemAlocacao) + "]:");
                 int codigoCaixaSelecionado = getScanner().nextInt();
                 print("\n");
                 print("Você está usando o CAIXA " + codigoCaixaSelecionado + " como o funcionário " + funcionarioSelecionado.getNome());
@@ -263,7 +263,7 @@ public abstract class Menu extends Ui {
 
             print("<Opções>");
             print("111 - Alterar método de pagamento atual <" + (compra.isCartao() ? "Cartão" : "Dinheiro") + ">");
-            print("222 - Selecionar caixa <?>");
+            print("222 - Selecionar caixa <" + (Utils.isNullOrEmpty(compra.getCodigoCaixa()) ? "?" : compra.getCodigoCaixa()) + ">");
             print("333 - Finalizar compra");
             print("999 - Desistir da compra");
             print(compra.getCarrinho());
@@ -277,6 +277,11 @@ public abstract class Menu extends Ui {
                     compra.alterarTipoPagamento();
                     break;
                 case 222:
+                    Integer codigoCaixa;
+                    do {
+                        codigoCaixa = getCaixaSelecionado();
+                        compra.setCodigoCaixa(codigoCaixa);
+                    } while (Utils.isNullOrEmpty(codigoCaixa));
                     break;
                 case 333:
                     break;
@@ -300,5 +305,24 @@ public abstract class Menu extends Ui {
                     break;
             }
         }
+    }
+
+    private static Integer getCaixaSelecionado() {
+        List<Integer> codigosCaixasDisponiveis = Sessao.getInstance().getCodigosCaixasAbertosParaAtendimento();
+        print("\n");
+        print("\n");
+        print("Caixa(s) livre(s):");
+        print(listToString(codigosCaixasDisponiveis));
+        print("\n");
+        print("\n");
+        print("Digite o código do caixa desejado:");
+        int codigoCaixa = getScanner().nextInt();
+        for (Integer disponivel : codigosCaixasDisponiveis) {
+            if (disponivel == codigoCaixa) {
+                return codigoCaixa;
+            }
+        }
+
+        return null;
     }
 }

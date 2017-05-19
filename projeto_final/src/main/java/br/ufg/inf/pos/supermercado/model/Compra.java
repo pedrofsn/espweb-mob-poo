@@ -14,7 +14,7 @@ public class Compra {
 
     private Map<Integer, Double> carrinho = new HashMap<>();
     private int tipoPagamento = Constantes.FORMA_PAGAMENTO_CARTAO;
-    private Integer caixa = Constantes.VALOR_INVALIDO;
+    private Integer codigoCaixa = null;
 
     public void adicionarProdutoNaCompra(Produto produtoSelecionado, Double quantiaDesejada) throws ValidacaoException {
         if (!Utils.isNullOrEmpty(produtoSelecionado)) {
@@ -31,6 +31,10 @@ public class Compra {
 
     }
 
+    public boolean isCaixaSelecionado() {
+        return Constantes.VALOR_INVALIDO != codigoCaixa;
+    }
+
     public Map<Integer, Double> getCarrinho() {
         return carrinho;
     }
@@ -43,11 +47,11 @@ public class Compra {
         this.tipoPagamento = isCartao() ? Constantes.FORMA_PAGAMENTO_DINHEIRO : Constantes.FORMA_PAGAMENTO_CARTAO;
     }
 
-    public Integer getCaixa() {
-        return caixa;
+    public Integer getCodigoCaixa() {
+        return codigoCaixa;
     }
 
-    public void setCaixa(Integer caixa) {
-        this.caixa = caixa;
+    public void setCodigoCaixa(Integer codigoCaixa) {
+        this.codigoCaixa = codigoCaixa;
     }
 }
