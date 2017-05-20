@@ -44,11 +44,11 @@ public class Ui {
     }
 
     protected static void print(Map<Integer, Double> carrinho) {
-        if (!Utils.isNullOrEmpty(carrinho)) {
+        if (!Utils.isNullOrEmpty(carrinho) && carrinho.size() > 0) {
             print("\n\n");
             print("<Carrinho>");
             for (Map.Entry<Integer, Double> item : carrinho.entrySet()) {
-                print("Produto: " + item.getKey() + " / Quantidade: " + item.getValue());
+                print("Produto: " + item.getKey() + " | Quantidade: " + item.getValue());
             }
             print("\n\n");
         }

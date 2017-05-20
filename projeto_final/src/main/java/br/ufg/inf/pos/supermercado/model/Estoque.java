@@ -38,10 +38,6 @@ public class Estoque extends Mock {
         return produtosEmEstoque;
     }
 
-    public Produto getProdutoDoEstoque(int codigo) {
-        return produtosEmEstoque.get(codigo);
-    }
-
     public void adicionarProdutoEmEstoque(Produto novo) throws ValidacaoException {
         if (!Utils.isNullOrEmpty(novo)) {
             if (Utils.isNullOrEmpty(novo.getNome())) {
@@ -68,6 +64,18 @@ public class Estoque extends Mock {
         }
     }
 
+    public void removerProdutoEmEstoque(Integer key, Double value) {
+        if (!Utils.isNullOrEmpty(key) && !Utils.isNullOrEmpty(value)) {
+            for (Produto produto : produtosEmEstoque) {
+                if (produto.getCodigo() == key) {
+                    Double quantidade = produto.getQuantidade();
+                    quantidade = quantidade - value;
+                    produto.setQuantidade(quantidade);
+                }
+            }
+        }
+    }
+
     private boolean hasProdutoEmEstoque(Produto novo) throws ValidacaoException {
         for (Produto produto : produtosEmEstoque) {
             if (produto.getCodigo() == novo.getCodigo()) {
@@ -81,6 +89,5 @@ public class Estoque extends Mock {
 
         return false;
     }
-
 
 }

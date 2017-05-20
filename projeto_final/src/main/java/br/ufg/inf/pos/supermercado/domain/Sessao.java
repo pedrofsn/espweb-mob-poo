@@ -46,6 +46,12 @@ public class Sessao extends Mock {
         funcionarios.add(new Funcionario(2, "Edvaldo"));
         funcionarios.add(new Funcionario(3, "Beatriz"));
         funcionarios.add(new Funcionario(4, "Lorene"));
+
+        try {
+            posicionarFuncionarioEmAtendimento(0, 0);
+        } catch (ValidacaoException e) {
+            e.printStackTrace();
+        }
     }
 
     public Gerente getGerente() {
@@ -60,12 +66,26 @@ public class Sessao extends Mock {
         return codigo <= caixas.size() - 1 ? caixas.get(codigo) : null;
     }
 
-    public List<Integer> getCodigosCaixasAbertosParaAtendimento() {
+    public List<Integer> getCodigosCaixasSemFuncionario() {
+        return getCodigosCaixas(true);
+    }
+
+    public List<Integer> getCodigosCaixasComFuncionario() {
+        return getCodigosCaixas(false);
+    }
+
+    private List<Integer> getCodigosCaixas(boolean comFuncionario) {
         List<Integer> caixasSemAtendimento = new ArrayList<>();
 
         for (Caixa caixa : caixas) {
-            if (!caixa.isEmAtendimento()) {
-                caixasSemAtendimento.add(caixa.getCodigo());
+            if (comFuncionario) {
+                if (!caixa.isEmAtendimento()) {
+                    caixasSemAtendimento.add(caixa.getCodigo());
+                }
+            } else {
+                if (caixa.isEmAtendimento()) {
+                    caixasSemAtendimento.add(caixa.getCodigo());
+                }
             }
         }
 

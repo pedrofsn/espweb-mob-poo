@@ -1,5 +1,6 @@
 package br.ufg.inf.pos.supermercado.model;
 
+import br.ufg.inf.pos.supermercado.domain.Sessao;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.utils.Constantes;
 import br.ufg.inf.pos.supermercado.utils.Utils;
@@ -15,7 +16,6 @@ public class Compra {
     private Map<Integer, Double> carrinho = new HashMap<>();
     private int tipoPagamento = Constantes.FORMA_PAGAMENTO_CARTAO;
     private Integer codigoCaixa = null;
-    private Integer codigoFuncionario = null;
 
     public void adicionarProdutoNaCompra(Produto produtoSelecionado, Double quantiaDesejada) throws ValidacaoException {
         if (!Utils.isNullOrEmpty(produtoSelecionado)) {
@@ -32,10 +32,21 @@ public class Compra {
 
     }
 
-    public void executarVenda(Caixa caixa) {
-        if (!Utils.isNullOrEmpty(caixa) && caixa.getCodigo() == codigoCaixa) {
-//            this.codigoFuncionario = Sessao.getInstance().getCodigoFuncionarioDoCaixaEmAtendimento(codigoCaixa); TODO
+    public void finalizar() throws ValidacaoException {
+        if (Utils.isNullOrEmpty(codigoCaixa)) {
+            throw new ValidacaoException("Selecione um caixa");
         }
+
+        if (Utils.isNullOrEmpty(Sessao.getInstance().getCaixaPeloCodigo(codigoCaixa))) {
+            throw new ValidacaoException("Selecione um caixa com funcionário");
+        }
+
+        Sessao.getInstance().getCaixaPeloCodigo(codigoCaixa).getCodigoFuncionario();
+        for (Map.Entry<Integer, Double> produtoCarrinho : carrinho.entrySet()) {
+            Sessao.getInstance().getEstoque().removerProdutoEmEstoque(produtoCarrinho.getKey(), produtoCarrinho.getValue());
+        }
+
+
     }
 
     public boolean isCaixaSelecionado() {
@@ -60,5 +71,22 @@ public class Compra {
 
     public void setCodigoCaixa(Integer codigoCaixa) {
         this.codigoCaixa = codigoCaixa;
+    }
+
+    public double getValor() {
+        double valorTotal = 0.0;
+        if (!Utils.isNullOrEmpty(carrinho)) {
+
+            for (Map.Entry<Integer, Double> entry : carrinho.entrySet()) {
+                for (Produto produto : Sessao.getInstance().getEstoque().getProdutosEmEstoque()) {
+                    if (entry.getKey() == produto.getCodigo()) {
+                        double valorPorProduto = entry.getValue() * produto.getPreco();
+                        valorTotal += valorPorProduto;
+                    }
+                }
+            }
+        }
+
+        return valorTotal;
     }
 }

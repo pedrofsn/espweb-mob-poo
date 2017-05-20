@@ -170,7 +170,7 @@ public abstract class Menu extends Ui {
             print("\n");
             print("0 - Alterar visão de funcionário <" + funcionarioSelecionado.getCodigo() + ">");
             print("1 - Listar produtos em estoque");
-            print("2 - Alterar o caixa atual <" + funcionarioSelecionado.getCodigoCaixa() + ">");
+            print("2 - Alterar o caixa atual <" + (Utils.isNullOrEmpty(funcionarioSelecionado.getCodigoCaixa()) ? "?" : funcionarioSelecionado.getCodigoCaixa()) + ">");
             print("9 - Sair");
             print("\n");
             print("Opção:");
@@ -194,7 +194,7 @@ public abstract class Menu extends Ui {
                 print(Sessao.getInstance().getEstoque().getProdutosEmEstoque());
                 break;
             case 2:
-                List<Integer> lista = Sessao.getInstance().getCodigosCaixasAbertosParaAtendimento();
+                List<Integer> lista = Sessao.getInstance().getCodigosCaixasSemFuncionario();
                 if (Utils.isNullOrEmpty(lista)) {
                     print("[Sem caixas disponíveis]");
 
@@ -269,8 +269,8 @@ public abstract class Menu extends Ui {
         List<Produto> produtosEmEstoque = Sessao.getInstance().getEstoque().getProdutosEmEstoque();
         Compra compra = new Compra();
 
-        laco:
-        while (true) {
+        boolean emCompra = true;
+        while (emCompra) {
             print("\n\n");
             print(produtosEmEstoque);
             print("\n\n");
@@ -278,7 +278,7 @@ public abstract class Menu extends Ui {
             print("<Opções>");
             print("111 - Alterar método de pagamento atual <" + (compra.isCartao() ? "Cartão" : "Dinheiro") + ">");
             print("222 - Selecionar caixa <" + (Utils.isNullOrEmpty(compra.getCodigoCaixa()) ? "?" : compra.getCodigoCaixa()) + ">");
-            print("333 - Finalizar compra");
+            print("333 - Finalizar compra <" + compra.getValor() + ">");
             print("999 - Desistir da compra");
             print(compra.getCarrinho());
             print("\n\n");
@@ -298,12 +298,19 @@ public abstract class Menu extends Ui {
                     } while (Utils.isNullOrEmpty(codigoCaixa));
                     break;
                 case 333:
-
+                    try {
+                        compra.finalizar();
+                        iniciarMenuCliente();
+                        emCompra = false;
+                    } catch (ValidacaoException e) {
+                        print(e);
+                    }
                     break;
                 case 999:
                     compra = null;
                     iniciarMenuCliente();
-                    break laco;
+                    emCompra = false;
+                    break;
                 default:
                     print("Digite o peso/quantidade desejada: ");
                     double quantidade = getScanner().nextDouble();
@@ -323,16 +330,16 @@ public abstract class Menu extends Ui {
     }
 
     private static Integer getCaixaLivreParaPassarCompra() {
-        List<Integer> codigosCaixasDisponiveis = Sessao.getInstance().getCodigosCaixasAbertosParaAtendimento();
+        List<Integer> caixasComFuncionario = Sessao.getInstance().getCodigosCaixasComFuncionario();
         print("\n");
         print("\n");
         print("Caixa(s) livre(s):");
-        print(listToString(codigosCaixasDisponiveis));
+        print(listToString(caixasComFuncionario));
         print("\n");
         print("\n");
         print("Digite o código do caixa desejado:");
         int codigoCaixa = getScanner().nextInt();
-        for (Integer disponivel : codigosCaixasDisponiveis) {
+        for (Integer disponivel : caixasComFuncionario) {
             if (disponivel == codigoCaixa) {
                 return codigoCaixa;
             }
