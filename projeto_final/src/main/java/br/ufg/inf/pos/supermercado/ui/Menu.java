@@ -116,7 +116,7 @@ public abstract class Menu extends Ui {
         produto.setNome(getScanner().next());
 
         boolean isPorKg = getRespostaSimOuNao("Este produto é vendido por Kg?");
-        double quantidade = 0.0;
+        double quantidade;
 
         if (isPorKg) {
             print("Insira o peso do produto:");
