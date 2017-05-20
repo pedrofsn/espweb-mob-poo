@@ -5,6 +5,7 @@ import br.ufg.inf.pos.supermercado.domain.Sessao;
 import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.model.Compra;
+import br.ufg.inf.pos.supermercado.model.Funcionario;
 import br.ufg.inf.pos.supermercado.model.Produto;
 import br.ufg.inf.pos.supermercado.utils.Constantes;
 import br.ufg.inf.pos.supermercado.utils.Utils;
@@ -138,84 +139,79 @@ public abstract class Menu extends Ui {
         iniciarMenuGerente();
     }
 
-    public static void iniciarMenuFuncionario() {
-//        try {
-//            List<Integer> funcionariosSemAlocacao = Sessao.getInstance().getCodigosFuncionariosSemAlocacao();
-        List<Integer> caixasSemAlocacao = Sessao.getInstance().getCodigosCaixasSemAlocacao();
+    private static void iniciarMenuFuncionario() {
+        iniciarMenuFuncionario(null);
+    }
 
-//            if (Utils.isNullOrEmpty(funcionariosSemAlocacao)) {
-//                print("Sem FUNCIONÁRIOS disponíveis no momento, tente mais tarde");
-//
-//            } else
+    private static void iniciarMenuFuncionario(Integer funcionario) {
 
-        if (Utils.isNullOrEmpty(caixasSemAlocacao)) {
-            print("Sem CAIXAS disponíveis no momento, tente mais tarde");
-
-        } else {
-
+        if (Utils.isNullOrEmpty(funcionario)) {
             print("\n");
+            print(Sessao.getInstance().getFuncionariosEmString());
+
             print("\n");
             print("Escolha a visão de um funcionário:");
             print("\n");
-            List<String> funcionarios = Sessao.getInstance().getFuncionarios();
-            for (int i = 0; i < funcionarios.size(); i++) {
-                String funcionario = funcionarios.get(i);
-                Integer codigoCaixa = Sessao.getInstance().getCodigoCaixaDoFuncionarioEmAtendimento(i);
-                print(funcionario + " | Caixa: " + (Utils.isNullOrEmpty(codigoCaixa) ? "-" : codigoCaixa));
-            }
 
-            int codigoFuncionarioSelecionado = getScanner().nextInt();
-//            Funcionario funcionarioSelecionado = Sessao.getInstance().getFuncionarioDisponivel(codigoFuncionarioSelecionado);
-
-            print("\n");
-            print("\n");
-//            print("<Menu do Funcionário " + Sessao);
-
-//                print("\n");
-//                print("Você está usando o sistema como o funcionário " + funcionarioSelecionado.getNome());
-//                print("\n");
-//
-//                if (funcionarioSelecionado.)
-//                    print("Selecione um código de CAIXA que esteja disponível para ser assumido pelo funcionário " + funcionarioSelecionado.getNome() + " [" + listToString(caixasSemAlocacao) + "]:");
-//                int codigoCaixaSelecionado = getScanner().nextInt();
-//                print("\n");
-//
-//                print("Você está usando o CAIXA " + codigoCaixaSelecionado + " como o funcionário " + funcionarioSelecionado.getNome());
-//                Caixa caixaSelecionado = Sessao.getInstance().getCaixaDisponivel(codigoCaixaSelecionado);
-//                print("\n");
-//
-//                Sessao.getInstance().posicionarFuncionarioEmAtendimento(funcionarioSelecionado.getCodigo(), caixaSelecionado.getCodigo());
-//
-//                while (true) {
-//                    print("\n\n");
-//                    print("< Menu do Funcionário " + funcionarioSelecionado.getNome() + ">");
-//                    print("1 - Listar produtos em estoque");
-//                    print("2 - Efetuar venda de produtos");
-//                    print("9 - Sair");
-//                    print("\n\n");
-//                    print("Opção:");
-//                    int opcao = getScanner().nextInt();
-//                    tratarMenuFuncionario(codigoFuncionarioSelecionado, opcao);
-//
-//                    if (opcao == 9) {
-//                        break;
-//                    }
-//                }
+            funcionario = getScanner().nextInt();
         }
-//        } catch (ValidacaoException e) {
-//            print(e);
-//            iniciarMenuFuncionario();
-//        }
+
+        Funcionario funcionarioSelecionado = Sessao.getInstance().getFuncionarioPeloCodigo(funcionario);
+
+        if (Utils.isNullOrEmpty(funcionarioSelecionado)) {
+            print("[FUNCIONÁRIO INVÁLIDO]");
+            iniciarMenuFuncionario(null);
+        }
+
+        while (true) {
+            print("\n");
+            print("\n");
+            print("<Menu do Funcionário " + funcionarioSelecionado.getNome() + ">");
+            print("\n");
+            print("0 - Alterar visão de funcionário <" + funcionarioSelecionado.getCodigo() + ">");
+            print("1 - Listar produtos em estoque");
+            print("2 - Alterar o caixa atual <" + funcionarioSelecionado.getCodigoCaixa() + ">");
+            print("9 - Sair");
+            print("\n");
+            print("Opção:");
+            int opcao = getScanner().nextInt();
+            tratarMenuFuncionario(funcionarioSelecionado, opcao);
+
+            if (opcao == 9) {
+                break;
+            }
+        }
     }
 
-    private static void tratarMenuFuncionario(int codigoFuncionarioSelecionado, int opcao) {
+    private static void tratarMenuFuncionario(Funcionario f, int opcao) {
+        int funcionario = f.getCodigo();
         print("\n\n");
         switch (opcao) {
+            case 0:
+                iniciarMenuFuncionario();
+                break;
             case 1:
                 print(Sessao.getInstance().getEstoque().getProdutosEmEstoque());
                 break;
             case 2:
-                efetuarVenda(codigoFuncionarioSelecionado);
+                List<Integer> lista = Sessao.getInstance().getCodigosCaixasAbertosParaAtendimento();
+                if (Utils.isNullOrEmpty(lista)) {
+                    print("[Sem caixas disponíveis]");
+
+                } else {
+                    print("\n");
+                    print("Selecione um caixa pelo código [" + listToString(lista) + "]");
+                    print("Opção:");
+                    int codigoCaixaSelecionado = getScanner().nextInt();
+
+                    try {
+                        Sessao.getInstance().posicionarFuncionarioEmAtendimento(funcionario, codigoCaixaSelecionado);
+                    } catch (ValidacaoException e) {
+                        print(e);
+                    }
+
+                    iniciarMenuFuncionario(funcionario);
+                }
                 break;
             case 9:
                 print("Você saiu do sistema");

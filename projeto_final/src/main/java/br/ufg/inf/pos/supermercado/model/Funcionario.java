@@ -1,14 +1,17 @@
 package br.ufg.inf.pos.supermercado.model;
 
 import br.ufg.inf.pos.supermercado.domain.Pessoa;
+import br.ufg.inf.pos.supermercado.domain.Receptivel;
 import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
+import br.ufg.inf.pos.supermercado.utils.Utils;
 
 /**
  * Created by aluno on 13/05/17.
  */
-public class Funcionario extends Pessoa {
+public class Funcionario extends Pessoa implements Receptivel {
 
     private int codigo;
+    private Integer codigoCaixa;
 
     public Funcionario(int codigo, String nome) {
         setNome(nome);
@@ -23,6 +26,14 @@ public class Funcionario extends Pessoa {
         this.codigo = codigo;
     }
 
+    public Integer getCodigoCaixa() {
+        return codigoCaixa;
+    }
+
+    public void setCodigoCaixa(Integer codigoCaixa) {
+        this.codigoCaixa = codigoCaixa;
+    }
+
     @Override
     public TipoUsuario getTipo() {
         return TipoUsuario.FUNCIONARIO;
@@ -30,6 +41,11 @@ public class Funcionario extends Pessoa {
 
     @Override
     public String toString() {
-        return "CÓDIGO: " + codigo + " | FUNCIONÁRIO: " + getNome();
+        return "CÓDIGO: " + codigo + " | FUNCIONÁRIO: " + getNome() + " | CAIXA: " + (Utils.isNullOrEmpty(codigoCaixa) ? "?" : codigoCaixa);
+    }
+
+    @Override
+    public boolean isEmAtendimento() {
+        return !Utils.isNullOrEmpty(codigoCaixa);
     }
 }

@@ -1,6 +1,5 @@
 package br.ufg.inf.pos.supermercado.model;
 
-import br.ufg.inf.pos.supermercado.domain.Sessao;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.utils.Constantes;
 import br.ufg.inf.pos.supermercado.utils.Utils;
@@ -35,7 +34,7 @@ public class Compra {
 
     public void executarVenda(Caixa caixa) {
         if (!Utils.isNullOrEmpty(caixa) && caixa.getCodigo() == codigoCaixa) {
-            this.codigoFuncionario = Sessao.getInstance().getCodigoFuncionarioDoCaixaEmAtendimento(codigoCaixa);
+//            this.codigoFuncionario = Sessao.getInstance().getCodigoFuncionarioDoCaixaEmAtendimento(codigoCaixa); TODO
         }
     }
 
