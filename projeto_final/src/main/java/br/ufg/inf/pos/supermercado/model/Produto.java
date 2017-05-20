@@ -67,4 +67,8 @@ public class Produto {
         String mensagem = (isPorKg() ? "PESO" : "QUANTIDADE") + ": " + quantidade;
         return "CÓDIGO: " + codigo + " | NOME: " + nome + " | Preço: " + preco + " | Por Kg: " + (isPorKg() ? "Sim" : "Não") + " | " + mensagem;
     }
+
+    public String getTipoEmString() {
+        return isPorKg() ? "Kg" : "unidade(s)";
+    }
 }

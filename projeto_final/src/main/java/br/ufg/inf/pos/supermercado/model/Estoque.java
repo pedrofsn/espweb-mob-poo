@@ -61,6 +61,10 @@ public class Estoque extends Mock {
             }
 
             produtosEmEstoque.add(novo);
+
+            Log.getInstance().addLog(getClass().getName(), ":: INÍCIO - ADICIONAR ITEM ::");
+            Log.getInstance().addLog(getClass().getName(), novo.toString());
+            Log.getInstance().addLog(getClass().getName(), ":: FIM - ADICIONAR ITEM ::");
         }
     }
 
@@ -70,10 +74,22 @@ public class Estoque extends Mock {
                 if (produto.getCodigo() == key) {
                     Double quantidade = produto.getQuantidade();
                     quantidade = quantidade - value;
+
+                    Log.getInstance().addLog(getClass().getName(), ":: INÍCIO - REMOVER ITEM ::");
+                    Log.getInstance().addLog(getClass().getName(), produto.toString());
+                    String mensagem = "Removendo " + value + " " + produto.getTipoEmString() + " do produto " + produto.getNome() + "(" + key + ")";
+                    Log.getInstance().addLog(getClass().getName(), mensagem);
+
                     produto.setQuantidade(quantidade);
+
+                    Log.getInstance().addLog(getClass().getName(), produto.toString());
+                    Log.getInstance().addLog(getClass().getName(), ":: FIM - REMOVER ITEM ::");
                 }
             }
         }
+
+
+//        caixa, funcionário, venda realizada e o valor total da venda;
     }
 
     private boolean hasProdutoEmEstoque(Produto novo) throws ValidacaoException {

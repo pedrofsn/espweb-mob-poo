@@ -7,13 +7,13 @@ Cada caixa está equipada com uma balança, viabilizando a venda de produtos por
 ### O sistema deve respeitar os seguintes requisitos:
 + Fazer o controle do estoque de produtos do supermercado;
 + Gerentes podem adicionar produtos ao estoque;
-- Funcionários podem efetuar vendas de produtos (dando baixa no estoque);
-- Efetuar uma venda implica em registrar o caixa, funcionário a venda foi realizada e o valor total da venda;
++ Funcionários podem efetuar vendas de produtos (dando baixa no estoque);
++ Ao efetuar uma venda, registrar: caixa, funcionário, venda realizada e o valor total da venda;
 + Permitir o pagamento das vendas em dinheiro ou cartão;
 ? Se pagamento for com DINHEIRO, o sistema deve informar o valor do troco;
 + Clientes podem consultar o preço dos produtos em leitores espalhados pelo supermercado;
 - Gerente pode emitir relatórios de vendas e de estoque;
-- - O relatório de vendas deve informar, para cada caixa, os valores das vendas realizadas no dia, assim como o funcionário responsável pela venda;
+- + O relatório de vendas deve informar, para cada caixa, os valores das vendas realizadas no dia, assim como o funcionário responsável pela venda;
 - - O relatório de estoque deve informar as quantidades disponíveis por produto no início do dia e no final do dia;
 
 ### Entregáveis:

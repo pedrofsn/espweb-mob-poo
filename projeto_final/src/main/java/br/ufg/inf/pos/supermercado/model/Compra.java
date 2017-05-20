@@ -1,21 +1,24 @@
 package br.ufg.inf.pos.supermercado.model;
 
+import br.ufg.inf.pos.supermercado.domain.Relatavel;
 import br.ufg.inf.pos.supermercado.domain.Sessao;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.utils.Constantes;
 import br.ufg.inf.pos.supermercado.utils.Utils;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * Created by pedrofsn on 18/05/2017.
  */
-public class Compra {
+public class Compra implements Relatavel {
 
     private Map<Integer, Double> carrinho = new HashMap<>();
     private int tipoPagamento = Constantes.FORMA_PAGAMENTO_CARTAO;
     private Integer codigoCaixa = null;
+    private Date date = new Date();
 
     public void adicionarProdutoNaCompra(Produto produtoSelecionado, Double quantiaDesejada) throws ValidacaoException {
         if (!Utils.isNullOrEmpty(produtoSelecionado)) {
@@ -41,12 +44,9 @@ public class Compra {
             throw new ValidacaoException("Selecione um caixa com funcionário");
         }
 
-        Sessao.getInstance().getCaixaPeloCodigo(codigoCaixa).getCodigoFuncionario();
         for (Map.Entry<Integer, Double> produtoCarrinho : carrinho.entrySet()) {
             Sessao.getInstance().getEstoque().removerProdutoEmEstoque(produtoCarrinho.getKey(), produtoCarrinho.getValue());
         }
-
-
     }
 
     public boolean isCaixaSelecionado() {
@@ -88,5 +88,16 @@ public class Compra {
         }
 
         return valorTotal;
+    }
+
+    @Override
+    public String getRelatorio() {
+        try {
+            Integer codigoFuncionario = Sessao.getInstance().getCaixaPeloCodigo(codigoCaixa).getCodigoFuncionario();
+            Funcionario funcionario = Sessao.getInstance().getFuncionarioPeloCodigo(codigoFuncionario);
+            return funcionario.toString() + " efetuou uma venda no valor de " + getValor() + " na data " + date.toString();
+        } catch (Exception e) {
+            return "Não apurado";
+        }
     }
 }
