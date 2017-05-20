@@ -70,6 +70,8 @@ public abstract class Menu extends Ui {
             print("< Menu do Gerente " + Sessao.getInstance().getGerente().getNome() + ">");
             print("1 - Listar produtos em estoque");
             print("2 - Cadastrar Produtos");
+            print("3 - Emitir relatório de venda");
+            print("4 - Emitir relatório de estoque");
             print("9 - Sair");
             print("\n\n");
 
@@ -87,6 +89,12 @@ public abstract class Menu extends Ui {
                 break;
             case 2:
                 iniciarCadastroProduto();
+                break;
+            case 3:
+                print(Sessao.getInstance().getRelatorioVenda());
+                break;
+            case 4:
+                print(Sessao.getInstance().getRelatorioEstoque());
                 break;
             case 9:
                 print("Você saiu do sistema");

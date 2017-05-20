@@ -47,6 +47,8 @@ public class Compra implements Relatavel {
         for (Map.Entry<Integer, Double> produtoCarrinho : carrinho.entrySet()) {
             Sessao.getInstance().getEstoque().removerProdutoEmEstoque(produtoCarrinho.getKey(), produtoCarrinho.getValue());
         }
+
+        Sessao.getInstance().salvarCompra(this);
     }
 
     public boolean isCaixaSelecionado() {

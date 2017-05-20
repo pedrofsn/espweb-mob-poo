@@ -1,19 +1,22 @@
 package br.ufg.inf.pos.supermercado.model;
 
 import br.ufg.inf.pos.supermercado.domain.Mock;
+import br.ufg.inf.pos.supermercado.domain.Relatavel;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.utils.Constantes;
 import br.ufg.inf.pos.supermercado.utils.Utils;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  * Created by pedrofsn on 16/05/2017.
  */
-public class Estoque extends Mock {
+public class Estoque extends Mock implements Relatavel {
 
     private List<Produto> produtosEmEstoque = new ArrayList<>();
+    private List<String> registros = new ArrayList<>();
 
     public Estoque() {
         popularValoresDefault();
@@ -62,9 +65,7 @@ public class Estoque extends Mock {
 
             produtosEmEstoque.add(novo);
 
-            Log.getInstance().addLog(getClass().getName(), ":: INÍCIO - ADICIONAR ITEM ::");
-            Log.getInstance().addLog(getClass().getName(), novo.toString());
-            Log.getInstance().addLog(getClass().getName(), ":: FIM - ADICIONAR ITEM ::");
+            registros.add(new Date().toString() + " :: ADICIONADO :: " + novo.toString());
         }
     }
 
@@ -75,21 +76,13 @@ public class Estoque extends Mock {
                     Double quantidade = produto.getQuantidade();
                     quantidade = quantidade - value;
 
-                    Log.getInstance().addLog(getClass().getName(), ":: INÍCIO - REMOVER ITEM ::");
-                    Log.getInstance().addLog(getClass().getName(), produto.toString());
-                    String mensagem = "Removendo " + value + " " + produto.getTipoEmString() + " do produto " + produto.getNome() + "(" + key + ")";
-                    Log.getInstance().addLog(getClass().getName(), mensagem);
+                    String mensagem = "Foi removido " + value + " " + produto.getTipoEmString() + " do produto " + produto.getNome() + " (" + key + ") em " + new Date().toString();
+                    registros.add(mensagem);
 
                     produto.setQuantidade(quantidade);
-
-                    Log.getInstance().addLog(getClass().getName(), produto.toString());
-                    Log.getInstance().addLog(getClass().getName(), ":: FIM - REMOVER ITEM ::");
                 }
             }
         }
-
-
-//        caixa, funcionário, venda realizada e o valor total da venda;
     }
 
     private boolean hasProdutoEmEstoque(Produto novo) throws ValidacaoException {
@@ -106,4 +99,16 @@ public class Estoque extends Mock {
         return false;
     }
 
+    @Override
+    public String getRelatorio() {
+        String relatorio = "Não apurado";
+
+        if (!Utils.isNullOrEmpty(registros)) {
+            for (String r : registros) {
+                relatorio = r + "\n";
+            }
+        }
+
+        return relatorio;
+    }
 }

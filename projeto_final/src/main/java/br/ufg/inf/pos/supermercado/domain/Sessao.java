@@ -3,6 +3,7 @@ package br.ufg.inf.pos.supermercado.domain;
 import br.ufg.inf.pos.supermercado.controller.ControllerOperadorCaixa;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
 import br.ufg.inf.pos.supermercado.model.*;
+import br.ufg.inf.pos.supermercado.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,16 +18,16 @@ public class Sessao extends Mock {
     private Gerente gerente;
     private Estoque estoque;
     private List<Funcionario> funcionarios;
-    private List<Cliente> clientes;
     private List<Caixa> caixas;
+    private List<Compra> comprasRealizadas;
     private ControllerOperadorCaixa controllerOperadorCaixa;
 
     private Sessao() {
+        comprasRealizadas = new ArrayList<>();
         controllerOperadorCaixa = new ControllerOperadorCaixa();
         gerente = new Gerente(0, "Pedro");
         estoque = new Estoque();
         funcionarios = new ArrayList<>();
-        clientes = new ArrayList<>();
         caixas = new ArrayList<>();
         popularValoresDefault();
     }
@@ -116,5 +117,23 @@ public class Sessao extends Mock {
             lista.add(f.toString());
         }
         return lista;
+    }
+
+    public String getRelatorioVenda() {
+        StringBuilder strings = new StringBuilder("Não apurado");
+        if (!Utils.isNullOrEmpty(comprasRealizadas)) {
+            for (Compra compra : comprasRealizadas) {
+                strings.append(compra.getRelatorio());
+            }
+        }
+        return strings.toString();
+    }
+
+    public String getRelatorioEstoque() {
+        return estoque.getRelatorio();
+    }
+
+    public void salvarCompra(Compra compra) {
+        comprasRealizadas.add(compra);
     }
 }
