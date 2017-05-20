@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b338151-7107-4a4b-8bfb-6be85f5b35be" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/CustomHashMap.java" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/Main.class" afterPath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/Main.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/domain/Sessao.class" afterPath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/domain/Sessao.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/model/Compra.class" afterPath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/model/Compra.class" />
@@ -11,7 +10,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/ui/Menu.class" afterPath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/ui/Menu.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/ui/Ui.class" afterPath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/ui/Ui.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -48,11 +47,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ui.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Ui.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="321">
               <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="116" lean-forward="false" selection-start-line="2" selection-start-column="116" selection-end-line="2" selection-end-column="116" />
               <folding />
             </state>
           </provider>
@@ -203,7 +212,6 @@
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Relatavel.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Pessoa.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Venda.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Compra.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/Constantes.java" />
@@ -211,6 +219,7 @@
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -899,7 +908,14 @@
       <option name="project" value="LOCAL" />
       <updated>1495258240521</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="refactoring">
+      <created>1495258330285</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1495258330285</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -986,7 +1002,8 @@
     <MESSAGE value="Removendo produtos do estoque no momento da venda" />
     <MESSAGE value="Primeiro relatório" />
     <MESSAGE value="Relatórios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Relatórios" />
+    <MESSAGE value="refactoring" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactoring" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1340,14 +1357,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="3" lean-forward="false" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Venda.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -1471,6 +1480,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="116" lean-forward="false" selection-start-line="2" selection-start-column="116" selection-end-line="2" selection-end-column="116" />
           <folding />
         </state>
       </provider>
