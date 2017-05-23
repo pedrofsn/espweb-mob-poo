@@ -13,11 +13,6 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(int codigo, double quantidade) {
-        this.codigo = codigo;
-        this.quantidade = quantidade;
-    }
-
     public Produto(int codigo, String nome, double quantidade, double preco) {
         this.codigo = codigo;
         this.nome = nome;

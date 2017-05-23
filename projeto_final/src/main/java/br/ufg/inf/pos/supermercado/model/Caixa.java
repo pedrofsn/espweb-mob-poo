@@ -1,7 +1,7 @@
 package br.ufg.inf.pos.supermercado.model;
 
 import br.ufg.inf.pos.supermercado.domain.Receptivel;
-import br.ufg.inf.pos.supermercado.utils.Utils;
+import br.ufg.inf.pos.supermercado.util.Utils;
 
 /**
  * Created by aluno on 13/05/17.
@@ -17,10 +17,6 @@ public class Caixa implements Receptivel {
 
     public int getCodigo() {
         return codigo;
-    }
-
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
     }
 
     public Integer getCodigoFuncionario() {

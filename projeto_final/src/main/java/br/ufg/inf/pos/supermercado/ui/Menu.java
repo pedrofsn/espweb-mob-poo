@@ -1,14 +1,11 @@
 package br.ufg.inf.pos.supermercado.ui;
 
 import br.ufg.inf.pos.supermercado.controller.ControllerLogin;
-import br.ufg.inf.pos.supermercado.domain.Sessao;
-import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
+import br.ufg.inf.pos.supermercado.exceptions.QuantidadeException;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
-import br.ufg.inf.pos.supermercado.model.Compra;
-import br.ufg.inf.pos.supermercado.model.Funcionario;
-import br.ufg.inf.pos.supermercado.model.Produto;
-import br.ufg.inf.pos.supermercado.utils.Constantes;
-import br.ufg.inf.pos.supermercado.utils.Utils;
+import br.ufg.inf.pos.supermercado.model.*;
+import br.ufg.inf.pos.supermercado.util.Constantes;
+import br.ufg.inf.pos.supermercado.util.Utils;
 
 import java.util.List;
 
@@ -91,10 +88,20 @@ public abstract class Menu extends Ui {
                 iniciarCadastroProduto();
                 break;
             case 3:
-                print(Sessao.getInstance().getRelatorioVenda());
+                List<String> relatoriosVenda = Sessao.getInstance().getRelatorioVenda();
+                if (Utils.isNullOrEmpty(relatoriosVenda)) {
+                    print("Não apurado");
+                } else {
+                    print(relatoriosVenda);
+                }
                 break;
             case 4:
-                print(Sessao.getInstance().getRelatorioEstoque());
+                List<String> relatoriosEstoque = Sessao.getInstance().getRelatorioEstoque();
+                if (Utils.isNullOrEmpty(relatoriosEstoque)) {
+                    print("Não apurado");
+                } else {
+                    print(relatoriosEstoque);
+                }
                 break;
             case 9:
                 print("Você saiu do sistema");
@@ -148,12 +155,12 @@ public abstract class Menu extends Ui {
     }
 
     private static void iniciarMenuFuncionario() {
-        iniciarMenuFuncionario(null);
+        iniciarMenuFuncionario(Constantes.VALOR_INVALIDO);
     }
 
     private static void iniciarMenuFuncionario(Integer funcionario) {
 
-        if (Utils.isNullOrEmpty(funcionario)) {
+        if (Utils.isNullOrEmpty(funcionario) || funcionario == Constantes.VALOR_INVALIDO) {
             print("\n");
             print(Sessao.getInstance().getFuncionariosEmString());
 
@@ -306,8 +313,17 @@ public abstract class Menu extends Ui {
                     } while (Utils.isNullOrEmpty(codigoCaixa));
                     break;
                 case 333:
+                    Double valorPagoEmDinheiro = 0.0;
+                    if (!compra.isCartao()) {
+                        print("Total da compra: " + getValorMonetario(compra.getValor()));
+                        print("Insira o valor a ser pago: ");
+                        valorPagoEmDinheiro = getScanner().nextDouble();
+                    }
+
                     try {
-                        compra.finalizar();
+                        print("\n");
+                        print(compra.finalizar(valorPagoEmDinheiro));
+                        print("\n");
                         iniciarMenuCliente();
                         emCompra = false;
                     } catch (ValidacaoException e) {
@@ -315,7 +331,6 @@ public abstract class Menu extends Ui {
                     }
                     break;
                 case 999:
-                    compra = null;
                     iniciarMenuCliente();
                     emCompra = false;
                     break;
@@ -323,16 +338,10 @@ public abstract class Menu extends Ui {
                     print("Digite o peso/quantidade desejada: ");
                     double quantidade = getScanner().nextDouble();
 
-                    Produto produto = null;
                     try {
-                        produto = produtosEmEstoque.get(codigo);
-                        compra.adicionarProdutoNaCompra(produto, quantidade);
-                    } catch (ValidacaoException e) {
+                        compra.adicionarProdutoNaCompra(Sessao.getInstance().getEstoque().getProduto(codigo), quantidade);
+                    } catch (QuantidadeException | ValidacaoException e) {
                         print(e);
-
-                    } catch (IndexOutOfBoundsException e) {
-                        print("[NÃO FOI POSSÍVEL ADICIONAR O PRODUTO AO CARRINHO: Código Inválido]");
-
                     }
                     break;
             }

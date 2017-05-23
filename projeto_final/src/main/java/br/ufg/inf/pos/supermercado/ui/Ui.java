@@ -1,7 +1,7 @@
 package br.ufg.inf.pos.supermercado.ui;
 
-import br.ufg.inf.pos.supermercado.utils.Constantes;
-import br.ufg.inf.pos.supermercado.utils.Utils;
+import br.ufg.inf.pos.supermercado.util.Constantes;
+import br.ufg.inf.pos.supermercado.util.Utils;
 
 import java.math.BigDecimal;
 import java.text.NumberFormat;

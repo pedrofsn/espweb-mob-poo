@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b338151-7107-4a4b-8bfb-6be85f5b35be" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/model/Estoque.class" afterPath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/model/Estoque.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/ui/Menu.class" afterPath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/ui/Menu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/utils/Constantes.class" afterPath="$PROJECT_DIR$/target/classes/br/ufg/inf/pos/supermercado/utils/Constantes.class" />
+    <list default="true" id="2b338151-7107-4a4b-8bfb-6be85f5b35be" name="Default" comment="Refacotring">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerTrocoDinheiro.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/exceptions/QuantidadeException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Pessoa.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Sessao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/TipoUsuario.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/util/Constantes.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/util/Utils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" afterPath="$PROJECT_DIR$/.idea/kotlinc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projeto_final.iml" afterPath="$PROJECT_DIR$/projeto_final.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/Main.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerLogin.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerLogin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerOperadorCaixa.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerOperadorCaixa.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Mock.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Mock.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Receptivel.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Receptivel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Caixa.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Caixa.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Compra.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Compra.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Gerente.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Gerente.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java" afterPath="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uml/UMLDiagrams/Class Diagrams/teste 2017.05.20 11-24-58.cdg" afterPath="$PROJECT_DIR$/uml/UMLDiagrams/Class Diagrams/teste 2017.05.20 11-24-58.cdg" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -23,70 +48,36 @@
       <FILTER>br.ufg.inf.pos.supermercado.utils.*</FILTER>
     </SUITE>
   </component>
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
+    <favorites_list name="CodeIris Favorites" />
     <favorites_list name="projeto_final" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java">
+      <file leaf-file-name="Compra.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Compra.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="327" column="47" lean-forward="true" selection-start-line="327" selection-start-column="47" selection-end-line="327" selection-end-column="47" />
+            <state relative-caret-position="13">
+              <caret line="108" column="17" lean-forward="true" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
               <folding>
-                <element signature="method#getCaixaLivreParaPassarCompra#0;class#Menu#0" expanded="false" />
-                <marker date="1495574697507" expanded="true" signature="11019:11397" ph="{...}" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ui.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Sessao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Sessao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+            <state relative-caret-position="200">
+              <caret line="131" column="24" lean-forward="false" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="24" />
               <folding>
-                <element signature="docComment;class#Sessao#0" expanded="false" />
-                <element signature="method#Sessao#0;class#Sessao#0" expanded="false" />
-                <element signature="method#popularValoresDefault#0;class#Sessao#0" expanded="false" />
-                <element signature="method#getFuncionarioPeloCodigo#0;class#Sessao#0" expanded="false" />
-                <element signature="method#getCodigosCaixas#0;class#Sessao#0" expanded="false" />
-                <element signature="method#posicionarFuncionarioEmAtendimento#0;class#Sessao#0" expanded="false" />
-                <element signature="method#hasFuncionarioEmAtendendimento#0;class#Sessao#0" expanded="false" />
-                <element signature="method#getFuncionariosEmString#0;class#Sessao#0" expanded="false" />
-                <element signature="method#getRelatorioVenda#0;class#Sessao#0" expanded="false" />
+                <element signature="e#3909#3910#0" expanded="true" />
+                <element signature="e#3961#3962#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -95,31 +86,21 @@
       <file leaf-file-name="Estoque.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="78" column="44" lean-forward="false" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
+            <state relative-caret-position="114">
+              <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
               <folding>
-                <element signature="docComment;class#Estoque#0" expanded="false" />
-                <element signature="method#hasProdutoEmEstoque#0;class#Estoque#0" expanded="false" />
+                <element signature="e#1441#1442#0" expanded="true" />
+                <element signature="e#1481#1482#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Compra.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Compra.java">
+      <file leaf-file-name="Menu.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constantes.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/Constantes.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="328">
+              <caret line="147" column="40" lean-forward="true" selection-start-line="147" selection-start-column="40" selection-end-line="147" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -139,36 +120,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>aberto</find>
-      <find>caixa deseja</find>
-      <find>getCodigosCaixasSemFuncionario</find>
-      <find>alterar ca</find>
-      <find>caixa atual</find>
-      <find>livre(s)</find>
-      <find>finalizar</find>
-      <find>posicionarFuncionarioEmAtendimento</find>
-      <find>carrinho</find>
-      <find>carrinho&gt;</find>
-      <find>&lt;</find>
-      <find>&lt;C</find>
-      <find>iniciarCompra</find>
-      <find>&lt;Car</find>
-      <find>ve</find>
-      <find>venda</find>
-      <find>reai</find>
-      <find>clientes</find>
       <find>gerente</find>
       <find>getClass().getName()</find>
       <find>+ &quot;\n&quot;</find>
-      <find>&gt;&gt;</find>
-      <find>&gt;</find>
-      <find>:</find>
-      <find>::</find>
-      <find>pr</find>
-      <find>produto</find>
-      <find>produto i</find>
-      <find>produto inv</find>
-      <find>produto invá</find>
+      <find>mensagem</find>
+      <find>relator</find>
+      <find>relatorio</find>
+      <find>efetuou</find>
+      <find>produto foi adicionado ao estoque</find>
+      <find>ad</find>
+      <find>adici</find>
+      <find>adicio</find>
+      <find>adicionadio</find>
+      <find>adicionadi</find>
+      <find>adicionad</find>
+      <find>adiciona</find>
+      <find>adicion</find>
+      <find>adicionnado</find>
+      <find>adicionado</find>
+      <find>if (codigo &lt;= produtosEmEstoque.size() - 1) {</find>
+      <find>produtosEmEstoque.get(i)</find>
+      <find>tratar</find>
+      <find>cadastrar</find>
+      <find>we</find>
+      <find>wefe</find>
+      <find>e</find>
+      <find>efe</find>
+      <find>efet</find>
+      <find>efetu</find>
+      <find>efetuo</find>
+      <find>efetuou</find>
     </findStrings>
     <replaceStrings>
       <replace>, 10, false, 10.00));</replace>
@@ -189,9 +170,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/br/ufg/inf/pos/supermercado/Main.java" />
-        <option value="$PROJECT_DIR$/src/br/ufg/inf/pos/supermercado/model/Balanca.java" />
-        <option value="$PROJECT_DIR$/src/br/ufg/inf/pos/supermercado/Utils.java" />
         <option value="$PROJECT_DIR$/src/br/ufg/inf/pos/supermercado/exceptions/SegurancaException.java" />
         <option value="$PROJECT_DIR$/src/br/ufg/inf/pos/supermercado/utils/Utils.java" />
         <option value="$PROJECT_DIR$/src/br/ufg/inf/pos/supermercado/utils/Constantes.java" />
@@ -219,22 +197,30 @@
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/CustomHashMap.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Receptivel.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Caixa.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerOperadorCaixa.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Relatavel.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Pessoa.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Venda.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Compra.java" />
-        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/Constantes.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Log.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Pessoa.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/Constantes.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Caixa.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/TipoUsuario.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerTroco.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerTrocoDinheiro.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/util/Utils.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerOperadorCaixa.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerLogin.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Sessao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/exceptions/QuantidadeException.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java" />
         <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Compra.java" />
       </list>
     </option>
   </component>
@@ -267,7 +253,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -276,6 +261,112 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projeto_final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projeto_final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projeto_final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projeto_final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.8 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rt.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="projeto_final" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="projeto_final" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -332,7 +423,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
+              <option name="myItemId" value="util" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -488,16 +579,20 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="SearchEverywhereHistoryKey" value="compra&#9;PSI&#9;JAVA://br.ufg.inf.pos.supermercado.model.Compra&#10;mai&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/Main.java&#10;read&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/README.md&#10;produ&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java&#10;ses&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java&#10;mock&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/domain/Mock.java&#10;caixa&#9;PSI&#9;JAVA://br.ufg.inf.pos.supermercado.model.Caixa&#10;funcio&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java&#10;func&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java&#10;sessa&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java&#10;main&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/Main.java&#10;ui&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java&#10;sess&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java&#10;produto&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java&#10;esto&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java&#10;readm&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/README.md&#10;simou&#9;PSI&#9;JAVA://br.ufg.inf.pos.supermercado.ui.MyUI#getRespostaSimOuNao&#10;menu&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/br/ufg/inf/pos/supermercado/ui/Menu.java" />
+    <property name="SearchEverywhereHistoryKey" value="ui&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java&#10;readm&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/README.md&#10;funci&#9;FILE&#9;file:///home/aluno/Documentos/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java&#10;menu&#9;FILE&#9;file:///home/aluno/Documentos/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java&#10;compra&#9;PSI&#9;JAVA://br.ufg.inf.pos.supermercado.model.Compra&#10;mai&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/Main.java&#10;read&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/README.md&#10;produ&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java&#10;ses&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java&#10;mock&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/domain/Mock.java&#10;caixa&#9;PSI&#9;JAVA://br.ufg.inf.pos.supermercado.model.Caixa&#10;funcio&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java&#10;func&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java&#10;sessa&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java&#10;main&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/Main.java&#10;sess&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java&#10;produto&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java&#10;esto&#9;FILE&#9;file://C:/Users/pedrofsn/Documents/Desenvolvimento/git/espweb-mob-poo/projeto_final/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java&#10;simou&#9;PSI&#9;JAVA://br.ufg.inf.pos.supermercado.ui.MyUI#getRespostaSimOuNao" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -524,16 +619,16 @@
     <configuration default="false" name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="br.ufg.inf.pos.supermercado.utils.*" />
+          <option name="PATTERN" value="br.ufg.inf.pos.supermercado.util.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="MAIN_CLASS_NAME" value="br.ufg.inf.pos.supermercado.Main" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
@@ -818,14 +913,42 @@
       <option name="project" value="LOCAL" />
       <updated>1495258330285</updated>
     </task>
-    <task id="LOCAL-00016" summary="Acrescentando uma validação/exception">
-      <created>1495574722183</created>
+    <task id="LOCAL-00016" summary="refactoring">
+      <created>1495282037801</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1495574722183</updated>
+      <updated>1495282037801</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Melhorando">
+      <created>1495287164621</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1495287164621</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Relatórios funcionando com sucesso">
+      <created>1495287709127</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1495287709127</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Refacotring">
+      <created>1495287846000</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1495287846000</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Removendo classe não utilizada">
+      <created>1495291298602</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1495291298602</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -836,43 +959,31 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.62147504" sideWeight="0.50625" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5274841" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.55179703" sideWeight="0.49166667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32875264" sideWeight="0.49166667" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6215645" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.62147504" sideWeight="0.49375" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28697917" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6215645" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Code Iris" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31606767" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -911,30 +1022,12 @@
       </list>
     </option>
   </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
     </option>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -955,73 +1048,30 @@
     <MESSAGE value="Primeiro relatório" />
     <MESSAGE value="Relatórios" />
     <MESSAGE value="refactoring" />
-    <MESSAGE value="Acrescentando uma validação/exception" />
-    <option name="LAST_COMMIT_MESSAGE" value="Acrescentando uma validação/exception" />
+    <MESSAGE value="Melhorando" />
+    <MESSAGE value="Relatórios funcionando com sucesso" />
+    <MESSAGE value="Refacotring" />
+    <MESSAGE value="Removendo classe não utilizada" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removendo classe não utilizada" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="40" />
+      <option name="time" value="58" />
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="produto.getPreco()" />
-        <watch expression="entry.getKey()" />
-      </configuration>
-    </watches-manager>
+    <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#getCaixaLivreParaPassarCompra#0;class#Menu#0" expanded="false" />
-            <marker date="1495574697507" expanded="true" signature="11019:11397" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Venda.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2482">
-          <caret line="156" column="172" lean-forward="false" selection-start-line="156" selection-start-column="172" selection-end-line="156" selection-end-column="172" />
-          <folding>
-            <element signature="method#getCaixaLivreParaPassarCompra#0;class#Menu#0" expanded="false" />
-            <marker date="1495574697507" expanded="true" signature="11019:11397" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="45" column="29" lean-forward="false" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="29" />
-          <folding>
-            <element signature="docComment;class#Sessao#0" expanded="false" />
-            <element signature="method#Sessao#0;class#Sessao#0" expanded="false" />
-            <element signature="method#popularValoresDefault#0;class#Sessao#0" expanded="false" />
-            <element signature="method#getFuncionarioPeloCodigo#0;class#Sessao#0" expanded="false" />
-            <element signature="method#getCodigosCaixas#0;class#Sessao#0" expanded="false" />
-            <element signature="method#posicionarFuncionarioEmAtendimento#0;class#Sessao#0" expanded="false" />
-            <element signature="method#hasFuncionarioEmAtendendimento#0;class#Sessao#0" expanded="false" />
-            <element signature="method#getFuncionariosEmString#0;class#Sessao#0" expanded="false" />
-            <element signature="method#getRelatorioVenda#0;class#Sessao#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="680">
+          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -1030,18 +1080,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#getCaixaLivreParaPassarCompra#0;class#Menu#0" expanded="false" />
-            <marker date="1495574697507" expanded="true" signature="11019:11397" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/Constantes.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/util/Constantes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,181 +1095,97 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding>
-            <element signature="docComment;class#Estoque#0" expanded="false" />
-            <element signature="method#hasProdutoEmEstoque#0;class#Estoque#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="method#getCaixaLivreParaPassarCompra#0;class#Menu#0" expanded="false" />
-            <marker date="1495574697507" expanded="true" signature="11019:11397" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/Constantes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="48" column="9" lean-forward="false" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-          <folding>
-            <element signature="docComment;class#Estoque#0" expanded="false" />
-            <element signature="method#hasProdutoEmEstoque#0;class#Estoque#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Balanca.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="64" column="4" lean-forward="false" selection-start-line="64" selection-start-column="4" selection-end-line="66" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Exception.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Sessao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="20" lean-forward="true" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <caret line="5" column="20" lean-forward="false" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javafaker/javafaker/0.13/javafaker-0.13.jar!/com/github/javafaker/Faker.class">
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/javafaker/javafaker/0.13/javafaker-0.13.jar!/com/github/javafaker/Faker.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Disponibilizavel.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Map.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Scanner.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/HashMap.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/function/IntPredicate.java" />
+    <entry file="file://$PROJECT_DIR$/projeto_final.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="219" column="32" lean-forward="false" selection-start-line="219" selection-start-column="32" selection-end-line="219" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Venda.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Log.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/CustomHashMap.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Pessoa.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Gerente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" lean-forward="false" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-          <folding>
-            <element signature="e#229#230#0" expanded="false" />
-            <element signature="e#264#265#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/exceptions/SegurancaException.java">
+    <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/javax/security/auth/login/LoginException.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Cliente.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="23" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="29" />
-          <folding>
-            <element signature="e#194#195#0" expanded="false" />
-            <element signature="e#224#225#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="195">
+          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Disponibilizavel.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Map.java">
+    <entry file="file://$PROJECT_DIR$/ValidacaoException.png" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/teste.form" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/teste.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="239" column="6" lean-forward="false" selection-start-line="239" selection-start-column="6" selection-end-line="239" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/Utils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="42" lean-forward="true" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/Scanner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="2074" column="15" lean-forward="false" selection-start-line="2074" selection-start-column="15" selection-end-line="2074" selection-end-column="15" />
-          <folding>
-            <element signature="e#78006#78007#0" expanded="false" />
-            <element signature="e#78050#78051#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/exceptions/ValidacaoException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/HashMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="1053" column="13" lean-forward="false" selection-start-line="1053" selection-start-column="13" selection-end-line="1053" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/function/IntPredicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="49" column="12" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Receptivel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="315">
+          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Caixa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="34" column="19" lean-forward="false" selection-start-line="34" selection-start-column="19" selection-end-line="34" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projeto_final.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="105">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Mock.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="75">
+          <caret line="5" column="22" lean-forward="false" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Produto.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Receptivel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="40" column="18" lean-forward="false" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-          <folding>
-            <element signature="e#869#870#0" expanded="true" />
-            <element signature="e#896#897#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerTrocoDinheiro.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="18" lean-forward="false" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1237,35 +1199,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Pessoa.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/util/Utils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="e#216#217#0" expanded="false" />
-            <element signature="e#243#244#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Funcionario.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="15" column="11" lean-forward="false" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+        <state relative-caret-position="221">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Relatavel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/util/Constantes.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="26" />
+        <state relative-caret-position="187">
+          <caret line="11" column="57" lean-forward="false" selection-start-line="11" selection-start-column="57" selection-end-line="11" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Venda.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/TipoUsuario.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/TipoUsuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
@@ -1273,27 +1223,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerLogin.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/exception/ValidacaoException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerOperadorCaixa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="13" column="38" lean-forward="true" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state relative-caret-position="153">
+          <caret line="15" column="121" lean-forward="false" selection-start-line="15" selection-start-column="121" selection-end-line="15" selection-end-column="121" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/controller/ControllerLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="23" column="22" lean-forward="false" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Relatavel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="26" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/lang/Object.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="202">
           <caret line="234" column="18" lean-forward="false" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
           <folding>
             <element signature="e#10065#10066#0" expanded="false" />
@@ -1302,101 +1266,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/Constantes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Log.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/utils/CustomHashMap.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/domain/Sessao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <element signature="docComment;class#Sessao#0" expanded="false" />
-            <element signature="method#Sessao#0;class#Sessao#0" expanded="false" />
-            <element signature="method#popularValoresDefault#0;class#Sessao#0" expanded="false" />
-            <element signature="method#getFuncionarioPeloCodigo#0;class#Sessao#0" expanded="false" />
-            <element signature="method#getCodigosCaixas#0;class#Sessao#0" expanded="false" />
-            <element signature="method#posicionarFuncionarioEmAtendimento#0;class#Sessao#0" expanded="false" />
-            <element signature="method#hasFuncionarioEmAtendendimento#0;class#Sessao#0" expanded="false" />
-            <element signature="method#getFuncionariosEmString#0;class#Sessao#0" expanded="false" />
-            <element signature="method#getRelatorioVenda#0;class#Sessao#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="78" column="44" lean-forward="false" selection-start-line="78" selection-start-column="44" selection-end-line="78" selection-end-column="44" />
-          <folding>
-            <element signature="docComment;class#Estoque#0" expanded="false" />
-            <element signature="method#hasProdutoEmEstoque#0;class#Estoque#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Compra.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="22" column="37" lean-forward="false" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/ArrayList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="652" column="47" lean-forward="false" selection-start-line="652" selection-start-column="22" selection-end-line="652" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="543" column="6" lean-forward="false" selection-start-line="543" selection-start-column="6" selection-end-line="543" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="327" column="47" lean-forward="true" selection-start-line="327" selection-start-column="47" selection-end-line="327" selection-end-column="47" />
-          <folding>
-            <element signature="method#getCaixaLivreParaPassarCompra#0;class#Menu#0" expanded="false" />
-            <marker date="1495574697507" expanded="true" signature="11019:11397" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="17" lean-forward="false" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="326">
+          <caret line="126" column="20" lean-forward="false" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="57" lean-forward="true" selection-start-line="24" selection-start-column="57" selection-end-line="24" selection-end-column="57" />
+        <state relative-caret-position="85">
+          <caret line="5" column="119" lean-forward="false" selection-start-line="5" selection-start-column="119" selection-end-line="5" selection-end-column="119" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Ui.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="104" column="5" lean-forward="false" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/exceptions/QuantidadeException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/exceptions/SegurancaException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/exceptions/ValidacaoException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding>
+            <element signature="e#194#195#0" expanded="false" />
+            <element signature="e#224#225#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_121/src.zip!/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="543" column="6" lean-forward="false" selection-start-line="543" selection-start-column="6" selection-end-line="543" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Sessao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="131" column="24" lean-forward="false" selection-start-line="131" selection-start-column="24" selection-end-line="131" selection-end-column="24" />
+          <folding>
+            <element signature="e#3909#3910#0" expanded="true" />
+            <element signature="e#3961#3962#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/ui/Menu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="147" column="40" lean-forward="true" selection-start-line="147" selection-start-column="40" selection-end-line="147" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Estoque.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
+          <folding>
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1481#1482#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/br/ufg/inf/pos/supermercado/model/Compra.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="108" column="17" lean-forward="true" selection-start-line="108" selection-start-column="17" selection-end-line="108" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1457,7 +1422,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

@@ -1,10 +1,9 @@
 package br.ufg.inf.pos.supermercado.model;
 
 import br.ufg.inf.pos.supermercado.domain.Mock;
-import br.ufg.inf.pos.supermercado.domain.Relatavel;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
-import br.ufg.inf.pos.supermercado.utils.Constantes;
-import br.ufg.inf.pos.supermercado.utils.Utils;
+import br.ufg.inf.pos.supermercado.util.Constantes;
+import br.ufg.inf.pos.supermercado.util.Utils;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,12 +12,13 @@ import java.util.List;
 /**
  * Created by pedrofsn on 16/05/2017.
  */
-public class Estoque extends Mock implements Relatavel {
+public class Estoque extends Mock {
 
     private List<Produto> produtosEmEstoque = new ArrayList<>();
-    private List<String> registros = new ArrayList<>();
+    private List<String> registros;
 
     public Estoque() {
+        registros = new ArrayList<>();
         popularValoresDefault();
     }
 
@@ -39,6 +39,18 @@ public class Estoque extends Mock implements Relatavel {
 
     public List<Produto> getProdutosEmEstoque() {
         return produtosEmEstoque;
+    }
+
+    public Produto getProduto(int codigo) {
+        if (!Utils.isNullOrEmpty(produtosEmEstoque)) {
+            for (int i = 0; i < produtosEmEstoque.size(); i++) {
+                if ((produtosEmEstoque.get(i).getCodigo() == codigo)) {
+                    return produtosEmEstoque.get(i);
+                }
+            }
+        }
+
+        return null;
     }
 
     public void adicionarProdutoEmEstoque(Produto novo) throws ValidacaoException {
@@ -65,7 +77,8 @@ public class Estoque extends Mock implements Relatavel {
 
             produtosEmEstoque.add(novo);
 
-            registros.add("Um novo produto foi adicionado ao estoque: " + novo.toString());
+            String mensagem = "\nFoi adicionado " + novo.getQuantidade() + " " + novo.getTipoEmString() + " do produto " + novo.getNome() + " (" + novo.getCodigo() + ") em " + new Date().toString();
+            registros.add(mensagem);
         }
     }
 
@@ -76,7 +89,7 @@ public class Estoque extends Mock implements Relatavel {
                     Double quantidade = produto.getQuantidade();
                     quantidade = quantidade - value;
 
-                    String mensagem = "Foi removido " + value + " " + produto.getTipoEmString() + " do produto " + produto.getNome() + " (" + key + ") em " + new Date().toString();
+                    String mensagem = "\nFoi removido " + value + " " + produto.getTipoEmString() + " do produto " + produto.getNome() + " (" + key + ") em " + new Date().toString();
                     registros.add(mensagem);
 
                     produto.setQuantidade(quantidade);
@@ -99,16 +112,7 @@ public class Estoque extends Mock implements Relatavel {
         return false;
     }
 
-    @Override
-    public String getRelatorio() {
-        String relatorio = "Não apurado";
-
-        if (!Utils.isNullOrEmpty(registros)) {
-            for (String r : registros) {
-                relatorio = r + "\n";
-            }
-        }
-
-        return relatorio;
+    public List<String> getRelatorioEstoque() {
+        return registros;
     }
 }

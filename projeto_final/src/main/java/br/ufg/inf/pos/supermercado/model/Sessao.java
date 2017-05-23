@@ -1,9 +1,8 @@
-package br.ufg.inf.pos.supermercado.domain;
+package br.ufg.inf.pos.supermercado.model;
 
 import br.ufg.inf.pos.supermercado.controller.ControllerOperadorCaixa;
+import br.ufg.inf.pos.supermercado.domain.Mock;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
-import br.ufg.inf.pos.supermercado.model.*;
-import br.ufg.inf.pos.supermercado.utils.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
  */
 public class Sessao extends Mock {
 
-    private static Sessao ourInstance = new Sessao();
+    private static Sessao ourInstance;
 
     private Gerente gerente;
     private Estoque estoque;
@@ -33,6 +32,9 @@ public class Sessao extends Mock {
     }
 
     public static Sessao getInstance() {
+        if (ourInstance == null) {
+            ourInstance = new Sessao();
+        }
         return ourInstance;
     }
 
@@ -119,18 +121,12 @@ public class Sessao extends Mock {
         return lista;
     }
 
-    public String getRelatorioVenda() {
-        StringBuilder strings;
-        if (!Utils.isNullOrEmpty(comprasRealizadas)) {
-            strings = new StringBuilder();
-
-            for (Compra compra : comprasRealizadas) {
-                strings.append(compra.toString());
-            }
-        } else {
-            strings = new StringBuilder("Não apurado");
+    public List<String> getRelatorioVenda() {
+        List<String> lista = new ArrayList<>();
+        for (Compra comprasRealizada : comprasRealizadas) {
+            lista.add(comprasRealizada.toString());
         }
-        return strings.toString();
+        return lista;
     }
 
     public List<String> getRelatorioEstoque() {

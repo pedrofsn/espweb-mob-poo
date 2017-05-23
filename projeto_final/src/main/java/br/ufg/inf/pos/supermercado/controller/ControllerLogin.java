@@ -1,8 +1,8 @@
 package br.ufg.inf.pos.supermercado.controller;
 
-import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
-import br.ufg.inf.pos.supermercado.exceptions.SegurancaException;
-import br.ufg.inf.pos.supermercado.utils.Utils;
+import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
+import br.ufg.inf.pos.supermercado.model.TipoUsuario;
+import br.ufg.inf.pos.supermercado.util.Utils;
 
 import javax.security.auth.login.LoginException;
 
@@ -15,18 +15,18 @@ public class ControllerLogin {
     private final static String LOGIN_FUNCIONARIO = "funcionario";
     private final static String LOGIN_CLIENTE = "cliente";
 
-    public TipoUsuario login(String login, String senha) throws LoginException, SegurancaException {
+    public TipoUsuario login(String login, String senha) throws LoginException, ValidacaoException {
         if (Utils.isNullOrEmpty(login)) {
-            throw new SegurancaException("Usuário não preenchido");
+            throw new ValidacaoException("Usuário não preenchido");
         }
 
         if (Utils.isNullOrEmpty(senha)) {
-            throw new LoginException("Usuário não preenchido");
+            throw new ValidacaoException("Usuário não preenchido");
         }
 
         // CONTROLE FAKE
         if (!login.equalsIgnoreCase(senha)) {
-            throw new LoginException("Login ou senha inválidos");
+            throw new ValidacaoException("Login ou senha inválidos");
         }
 
         switch (login) {

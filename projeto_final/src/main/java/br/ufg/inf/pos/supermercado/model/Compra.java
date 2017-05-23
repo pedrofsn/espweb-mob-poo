@@ -1,10 +1,9 @@
 package br.ufg.inf.pos.supermercado.model;
 
-import br.ufg.inf.pos.supermercado.domain.Relatavel;
-import br.ufg.inf.pos.supermercado.domain.Sessao;
+import br.ufg.inf.pos.supermercado.controller.ControllerTrocoDinheiro;
 import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
-import br.ufg.inf.pos.supermercado.utils.Constantes;
-import br.ufg.inf.pos.supermercado.utils.Utils;
+import br.ufg.inf.pos.supermercado.util.Constantes;
+import br.ufg.inf.pos.supermercado.util.Utils;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -13,12 +12,17 @@ import java.util.Map;
 /**
  * Created by pedrofsn on 18/05/2017.
  */
-public class Compra implements Relatavel {
+public class Compra {
 
+    private ControllerTrocoDinheiro controllerTrocoDinheiro = new ControllerTrocoDinheiro();
     private Map<Integer, Double> carrinho = new HashMap<>();
     private int tipoPagamento = Constantes.FORMA_PAGAMENTO_CARTAO;
     private Integer codigoCaixa = null;
-    private Date date = new Date();
+    private Date date;
+
+    public Compra() {
+        date = new Date();
+    }
 
     public void adicionarProdutoNaCompra(Produto produtoSelecionado, Double quantiaDesejada) throws ValidacaoException {
         if (!Utils.isNullOrEmpty(produtoSelecionado)) {
@@ -35,7 +39,7 @@ public class Compra implements Relatavel {
 
     }
 
-    public void finalizar() throws ValidacaoException {
+    public String finalizar(Double valorPagoEmDinheiro) throws ValidacaoException {
         if (Utils.isNullOrEmpty(codigoCaixa)) {
             throw new ValidacaoException("Selecione um caixa");
         }
@@ -44,15 +48,28 @@ public class Compra implements Relatavel {
             throw new ValidacaoException("Selecione um caixa com funcionário");
         }
 
+        if (isDinheiro() && !isDinheiroSuficiente(valorPagoEmDinheiro)) {
+            String mensagem = controllerTrocoDinheiro.calculaTroco(getValor(), valorPagoEmDinheiro);
+            throw new ValidacaoException(mensagem.trim());
+        }
+
         for (Map.Entry<Integer, Double> produtoCarrinho : carrinho.entrySet()) {
             Sessao.getInstance().getEstoque().removerProdutoEmEstoque(produtoCarrinho.getKey(), produtoCarrinho.getValue());
         }
 
         Sessao.getInstance().salvarCompra(this);
+
+        String resultado = Constantes.STRING_VAZIA;
+
+        if (isDinheiroSuficiente(valorPagoEmDinheiro)) {
+            resultado = controllerTrocoDinheiro.calculaTroco(getValor(), valorPagoEmDinheiro);
+        }
+
+        return resultado + "\n[COMPRA REALIZADA COM SUCESSO]";
     }
 
-    public boolean isCaixaSelecionado() {
-        return Constantes.VALOR_INVALIDO != codigoCaixa;
+    public boolean isDinheiroSuficiente(Double valorPagoEmDinheiro) {
+        return isDinheiro() && !Utils.isNullOrEmpty(valorPagoEmDinheiro) && valorPagoEmDinheiro >= getValor();
     }
 
     public Map<Integer, Double> getCarrinho() {
@@ -61,6 +78,10 @@ public class Compra implements Relatavel {
 
     public boolean isCartao() {
         return Constantes.FORMA_PAGAMENTO_CARTAO == tipoPagamento;
+    }
+
+    public boolean isDinheiro() {
+        return Constantes.FORMA_PAGAMENTO_DINHEIRO == tipoPagamento;
     }
 
     public void alterarTipoPagamento() {
@@ -92,14 +113,14 @@ public class Compra implements Relatavel {
         return valorTotal;
     }
 
+    public Date getDate() {
+        return date;
+    }
+
     @Override
-    public String getRelatorio() {
-        try {
-            Integer codigoFuncionario = Sessao.getInstance().getCaixaPeloCodigo(codigoCaixa).getCodigoFuncionario();
-            Funcionario funcionario = Sessao.getInstance().getFuncionarioPeloCodigo(codigoFuncionario);
-            return funcionario.toString() + " efetuou uma venda no valor de " + getValor() + " na data " + date.toString();
-        } catch (Exception e) {
-            return "Não apurado";
-        }
+    public String toString() {
+        Funcionario funcionario = Sessao.getInstance().getFuncionarioPeloCodigo(codigoCaixa);
+        String formaVenda = isDinheiro() ? "dinheiro" : "cartão de crédito";
+        return funcionario.toString() + " : efetuou uma venda no " + formaVenda + ", no valor de R$ " + getValor();
     }
 }
