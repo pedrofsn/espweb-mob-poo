@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="teste">
+  <ClassDiagramComponents>
+    <Class name="Constantes" package="br.ufg.inf.pos.supermercado.util" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="VALOR_INVALIDO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="STRING_VAZIA" type="String" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="FORMA_PAGAMENTO_CARTAO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+        <Field name="FORMA_PAGAMENTO_DINHEIRO" type="int" visibility="public" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="Utils" package="br.ufg.inf.pos.supermercado.util" visibility="public" xPosition="20.0" yPosition="207.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="isNullOrEmpty" returnType="boolean" visibility="public" isStatic="true">
+          <Argument type="Object" name="o"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Menu" package="br.ufg.inf.pos.supermercado.ui" visibility="public" isAbstract="true" xPosition="2826.0" yPosition="537.0">
+      <Fields>
+        <Field name="controllerLogin" type="ControllerLogin" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="inicializarUI" returnType="void" visibility="protected" isStatic="true"/>
+        <Method name="iniciarLogin" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="iniciarMenuUsuario" returnType="void" visibility="private" isStatic="true">
+          <Argument type="TipoUsuario" name="tipoUsuario"/>
+        </Method>
+        <Method name="iniciarMenuGerente" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="tratarMenuGerente" returnType="void" visibility="private" isStatic="true">
+          <Argument type="int" name="opcao"/>
+        </Method>
+        <Method name="iniciarCadastroProduto" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="iniciarMenuFuncionario" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="iniciarMenuFuncionario" returnType="void" visibility="private" isStatic="true">
+          <Argument type="Integer" name="funcionario"/>
+        </Method>
+        <Method name="tratarMenuFuncionario" returnType="void" visibility="private" isStatic="true">
+          <Argument type="Funcionario" name="f"/>
+          <Argument type="int" name="opcao"/>
+        </Method>
+        <Method name="efetuarVenda" returnType="void" visibility="private" isStatic="true">
+          <Argument type="int" name="codigoFuncionarioSelecionado"/>
+        </Method>
+        <Method name="iniciarMenuCliente" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="tratarMenuCliente" returnType="void" visibility="private" isStatic="true">
+          <Argument type="int" name="opcao"/>
+        </Method>
+        <Method name="iniciarCompra" returnType="void" visibility="private" isStatic="true"/>
+        <Method name="getCaixaLivreParaPassarCompra" returnType="Integer" visibility="private" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="Ui" package="br.ufg.inf.pos.supermercado.ui" visibility="public" xPosition="2687.0" yPosition="1291.0">
+      <Fields>
+        <Field name="CASOS_POSITIVOS" type="String[]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="CASOS_NEGATIVOS" type="String[]" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="scanner" type="Scanner" visibility="private" isStatic="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getRespostaSimOuNao" returnType="boolean" visibility="protected" isStatic="true">
+          <Argument type="String" name="mensagem"/>
+        </Method>
+        <Method name="print" returnType="void" visibility="protected" isStatic="true">
+          <Argument type="Map&lt;Integer, Double&gt;" name="carrinho"/>
+        </Method>
+        <Method name="print" returnType="void" visibility="protected" isStatic="true">
+          <Argument type="List" name="list"/>
+        </Method>
+        <Method name="print" returnType="void" visibility="protected" isStatic="true">
+          <Argument type="Exception" name="e"/>
+        </Method>
+        <Method name="print" returnType="void" visibility="protected" isStatic="true">
+          <Argument type="String" name="string"/>
+        </Method>
+        <Method name="listToString" returnType="String" visibility="protected" isStatic="true">
+          <Argument type="List&lt;Integer&gt;" name="l"/>
+        </Method>
+        <Method name="limparTela" returnType="void" visibility="protected" isStatic="true"/>
+        <Method name="getValorMonetario" returnType="String" visibility="protected" isStatic="true">
+          <Argument type="double" name="valorEntrada"/>
+        </Method>
+        <Method name="getScanner" returnType="Scanner" visibility="protected" isStatic="true"/>
+      </Methods>
+    </Class>
+    <Class name="ControllerTroco" package="br.ufg.inf.pos.supermercado.controller" visibility="public" xPosition="973.0" yPosition="2122.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="calculaTroco" returnType="String" visibility="public">
+          <Argument type="double" name="conta"/>
+          <Argument type="double" name="pago"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControllerOperadorCaixa" package="br.ufg.inf.pos.supermercado.controller" visibility="public" xPosition="1656.0" yPosition="1667.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="assumirCaixa" returnType="void" visibility="public">
+          <Argument type="List&lt;Funcionario&gt;" name="funcionarios"/>
+          <Argument type="List&lt;Caixa&gt;" name="caixas"/>
+          <Argument type="Integer" name="f"/>
+          <Argument type="Integer" name="c"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ControllerLogin" package="br.ufg.inf.pos.supermercado.controller" visibility="public" xPosition="2889.0" yPosition="72.0">
+      <Fields>
+        <Field name="LOGIN_GERENTE" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="LOGIN_FUNCIONARIO" type="String" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="LOGIN_CLIENTE" type="String" visibility="private" isStatic="true" isFinal="true"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="login" returnType="TipoUsuario" visibility="public">
+          <Argument type="String" name="login"/>
+          <Argument type="String" name="senha"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Mock" package="br.ufg.inf.pos.supermercado.domain" visibility="public" isAbstract="true" xPosition="435.0" yPosition="108.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="popularValoresDefault" returnType="void" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Produto" package="br.ufg.inf.pos.supermercado.model" visibility="public" xPosition="113.0" yPosition="1558.0">
+      <Fields>
+        <Field name="codigo" type="int" visibility="private"/>
+        <Field name="nome" type="String" visibility="private"/>
+        <Field name="quantidade" type="double" visibility="private"/>
+        <Field name="preco" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="int" name="codigo"/>
+          <Argument type="String" name="nome"/>
+          <Argument type="double" name="quantidade"/>
+          <Argument type="double" name="preco"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="isPorKg" returnType="boolean" visibility="public"/>
+        <Method name="getCodigo" returnType="int" visibility="public"/>
+        <Method name="setCodigo" returnType="void" visibility="public">
+          <Argument type="int" name="codigo"/>
+        </Method>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+        <Method name="getQuantidade" returnType="double" visibility="public"/>
+        <Method name="setQuantidade" returnType="void" visibility="public">
+          <Argument type="double" name="quantidade"/>
+        </Method>
+        <Method name="getPreco" returnType="double" visibility="public"/>
+        <Method name="setPreco" returnType="void" visibility="public">
+          <Argument type="double" name="preco"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="getTipoEmString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Caixa" package="br.ufg.inf.pos.supermercado.model" visibility="public" xPosition="982.0" yPosition="51.0">
+      <Fields>
+        <Field name="codigo" type="int" visibility="private"/>
+        <Field name="codigoFuncionario" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="codigo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCodigo" returnType="int" visibility="public"/>
+        <Method name="getCodigoFuncionario" returnType="Integer" visibility="public"/>
+        <Method name="setCodigoFuncionario" returnType="void" visibility="public">
+          <Argument type="Integer" name="codigoFuncionario"/>
+        </Method>
+        <Method name="isEmAtendimento" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Gerente" package="br.ufg.inf.pos.supermercado.model" visibility="public" xPosition="1656.0" yPosition="94.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="codigo"/>
+          <Argument type="String" name="nome"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTipo" returnType="TipoUsuario" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Sessao" package="br.ufg.inf.pos.supermercado.model" visibility="public" xPosition="876.0" yPosition="688.0">
+      <Fields>
+        <Field name="ourInstance" type="Sessao" visibility="private" isStatic="true"/>
+        <Field name="gerente" type="Gerente" visibility="private"/>
+        <Field name="estoque" type="Estoque" visibility="private"/>
+        <Field name="funcionarios" type="List&lt;Funcionario&gt;" visibility="private"/>
+        <Field name="caixas" type="List&lt;Caixa&gt;" visibility="private"/>
+        <Field name="comprasRealizadas" type="List&lt;Compra&gt;" visibility="private"/>
+        <Field name="controllerOperadorCaixa" type="ControllerOperadorCaixa" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="private"/>
+      </Constructors>
+      <Methods>
+        <Method name="getInstance" returnType="Sessao" visibility="public" isStatic="true"/>
+        <Method name="popularValoresDefault" returnType="void" visibility="public"/>
+        <Method name="getGerente" returnType="Gerente" visibility="public"/>
+        <Method name="getFuncionarioPeloCodigo" returnType="Funcionario" visibility="public">
+          <Argument type="int" name="codigo"/>
+        </Method>
+        <Method name="getCaixaPeloCodigo" returnType="Caixa" visibility="public">
+          <Argument type="int" name="codigo"/>
+        </Method>
+        <Method name="getCodigosCaixasSemFuncionario" returnType="List&lt;Integer&gt;" visibility="public"/>
+        <Method name="getCodigosCaixasComFuncionario" returnType="List&lt;Integer&gt;" visibility="public"/>
+        <Method name="getCodigosCaixas" returnType="List&lt;Integer&gt;" visibility="private">
+          <Argument type="boolean" name="comFuncionario"/>
+        </Method>
+        <Method name="getEstoque" returnType="Estoque" visibility="public"/>
+        <Method name="posicionarFuncionarioEmAtendimento" returnType="void" visibility="public">
+          <Argument type="int" name="codigoFuncionario"/>
+          <Argument type="int" name="codigoCaixa"/>
+        </Method>
+        <Method name="hasFuncionarioEmAtendendimento" returnType="boolean" visibility="public"/>
+        <Method name="getFuncionariosEmString" returnType="List&lt;String&gt;" visibility="public"/>
+        <Method name="getRelatorioVenda" returnType="List&lt;String&gt;" visibility="public"/>
+        <Method name="getRelatorioEstoque" returnType="List&lt;String&gt;" visibility="public"/>
+        <Method name="salvarCompra" returnType="void" visibility="public">
+          <Argument type="Compra" name="compra"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Estoque" package="br.ufg.inf.pos.supermercado.model" visibility="public" xPosition="167.0" yPosition="805.0">
+      <Fields>
+        <Field name="produtosEmEstoque" type="List&lt;Produto&gt;" visibility="private"/>
+        <Field name="registros" type="List&lt;String&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="popularValoresDefault" returnType="void" visibility="public"/>
+        <Method name="getProdutosEmEstoque" returnType="List&lt;Produto&gt;" visibility="public"/>
+        <Method name="adicionarProdutoEmEstoque" returnType="void" visibility="public">
+          <Argument type="Produto" name="novo"/>
+        </Method>
+        <Method name="removerProdutoEmEstoque" returnType="void" visibility="public">
+          <Argument type="Integer" name="key"/>
+          <Argument type="Double" name="value"/>
+        </Method>
+        <Method name="hasProdutoEmEstoque" returnType="boolean" visibility="private">
+          <Argument type="Produto" name="novo"/>
+        </Method>
+        <Method name="getRelatorioEstoque" returnType="List&lt;String&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Compra" package="br.ufg.inf.pos.supermercado.model" visibility="public" xPosition="845.0" yPosition="1541.0">
+      <Fields>
+        <Field name="controllerTroco" type="ControllerTroco" visibility="private"/>
+        <Field name="carrinho" type="Map&lt;Integer, Double&gt;" visibility="private"/>
+        <Field name="tipoPagamento" type="int" visibility="private"/>
+        <Field name="codigoCaixa" type="Integer" visibility="private"/>
+        <Field name="date" type="Date" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="adicionarProdutoNaCompra" returnType="void" visibility="public">
+          <Argument type="Produto" name="produtoSelecionado"/>
+          <Argument type="Double" name="quantiaDesejada"/>
+        </Method>
+        <Method name="finalizar" returnType="String" visibility="public">
+          <Argument type="Double" name="valorPagoEmDinheiro"/>
+        </Method>
+        <Method name="isDinheiroSuficiente" returnType="boolean" visibility="public">
+          <Argument type="Double" name="valorPagoEmDinheiro"/>
+        </Method>
+        <Method name="getCarrinho" returnType="Map&lt;Integer, Double&gt;" visibility="public"/>
+        <Method name="isCartao" returnType="boolean" visibility="public"/>
+        <Method name="isDinheiro" returnType="boolean" visibility="public"/>
+        <Method name="alterarTipoPagamento" returnType="void" visibility="public"/>
+        <Method name="getCodigoCaixa" returnType="Integer" visibility="public"/>
+        <Method name="setCodigoCaixa" returnType="void" visibility="public">
+          <Argument type="Integer" name="codigoCaixa"/>
+        </Method>
+        <Method name="getValor" returnType="double" visibility="public"/>
+        <Method name="getDate" returnType="Date" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Pessoa" package="br.ufg.inf.pos.supermercado.model" visibility="public" isAbstract="true" xPosition="2482.0" yPosition="496.0">
+      <Fields>
+        <Field name="nome" type="String" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getTipo" returnType="TipoUsuario" visibility="public" isAbstract="true"/>
+        <Method name="getNome" returnType="String" visibility="public"/>
+        <Method name="setNome" returnType="void" visibility="public">
+          <Argument type="String" name="nome"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Funcionario" package="br.ufg.inf.pos.supermercado.model" visibility="public" xPosition="2058.0" yPosition="823.0">
+      <Fields>
+        <Field name="codigo" type="int" visibility="private"/>
+        <Field name="codigoCaixa" type="Integer" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="int" name="codigo"/>
+          <Argument type="String" name="nome"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getCodigo" returnType="int" visibility="public"/>
+        <Method name="setCodigo" returnType="void" visibility="public">
+          <Argument type="int" name="codigo"/>
+        </Method>
+        <Method name="getCodigoCaixa" returnType="Integer" visibility="public"/>
+        <Method name="setCodigoCaixa" returnType="void" visibility="public">
+          <Argument type="Integer" name="codigoCaixa"/>
+        </Method>
+        <Method name="getTipo" returnType="TipoUsuario" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="isEmAtendimento" returnType="boolean" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ValidacaoException" package="br.ufg.inf.pos.supermercado.exception" visibility="public" xPosition="28.0" yPosition="352.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="message"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Interface name="Receptivel" package="br.ufg.inf.pos.supermercado.domain" visibility="public" xPosition="1689.0" yPosition="634.0">
+      <Methods>
+        <Method name="isEmAtendimento" returnType="boolean" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="Relatavel" package="br.ufg.inf.pos.supermercado.domain" visibility="public" xPosition="28.0" yPosition="482.0">
+      <Methods>
+        <Method name="getRelatorio" returnType="List&lt;String&gt;" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Enum name="TipoUsuario" package="br.ufg.inf.pos.supermercado.model" visibility="public" xPosition="2158.0" yPosition="89.0">
+      <Literals>
+        <Literal name="GERENTE"/>
+        <Literal name="FUNCIONARIO"/>
+        <Literal name="CLIENTE"/>
+      </Literals>
+    </Enum>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="br.ufg.inf.pos.supermercado.model.Estoque" target="br.ufg.inf.pos.supermercado.domain.Mock"/>
+    <HasRelation name="controllerTroco" source="br.ufg.inf.pos.supermercado.model.Compra" target="br.ufg.inf.pos.supermercado.controller.ControllerTrocoDinheiro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.controller.ControllerOperadorCaixa" target="br.ufg.inf.pos.supermercado.model.Funcionario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.ui.Menu" target="br.ufg.inf.pos.supermercado.model.TipoUsuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Gerente" target="br.ufg.inf.pos.supermercado.model.TipoUsuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Sessao" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Compra" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="br.ufg.inf.pos.supermercado.model.Funcionario" target="br.ufg.inf.pos.supermercado.model.Pessoa"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Gerente" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="funcionarios" source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Funcionario" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Funcionario&gt;"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="br.ufg.inf.pos.supermercado.model.Caixa" target="br.ufg.inf.pos.supermercado.domain.Receptivel"/>
+    <IsRelation name="is" source="br.ufg.inf.pos.supermercado.ui.Menu" target="br.ufg.inf.pos.supermercado.ui.Ui"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.controller.ControllerLogin" target="br.ufg.inf.pos.supermercado.model.TipoUsuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Estoque" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="br.ufg.inf.pos.supermercado.model.Funcionario" target="br.ufg.inf.pos.supermercado.domain.Receptivel"/>
+    <IsRelation name="is" source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.domain.Mock"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Caixa" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="controllerLogin" source="br.ufg.inf.pos.supermercado.ui.Menu" target="br.ufg.inf.pos.supermercado.controller.ControllerLogin" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Compra" target="br.ufg.inf.pos.supermercado.model.Produto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Estoque" target="br.ufg.inf.pos.supermercado.model.Produto" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="estoque" source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Estoque" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Funcionario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="produtosEmEstoque" source="br.ufg.inf.pos.supermercado.model.Estoque" target="br.ufg.inf.pos.supermercado.model.Produto" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Produto&gt;"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Pessoa" target="br.ufg.inf.pos.supermercado.model.TipoUsuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.ui.Menu" target="br.ufg.inf.pos.supermercado.model.Funcionario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="br.ufg.inf.pos.supermercado.model.Gerente" target="br.ufg.inf.pos.supermercado.model.Funcionario"/>
+    <HasRelation name="controllerOperadorCaixa" source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.controller.ControllerOperadorCaixa" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="caixas" source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Caixa" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Caixa&gt;"/>
+    <HasRelation name="ourInstance" source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Sessao" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="br.ufg.inf.pos.supermercado.model.Funcionario" target="br.ufg.inf.pos.supermercado.model.TipoUsuario" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="comprasRealizadas" source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Compra" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Compra&gt;"/>
+    <HasRelation name="gerente" source="br.ufg.inf.pos.supermercado.model.Sessao" target="br.ufg.inf.pos.supermercado.model.Gerente" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
