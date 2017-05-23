@@ -324,13 +324,15 @@ public abstract class Menu extends Ui {
                     double quantidade = getScanner().nextDouble();
 
                     Produto produto = null;
-                    if (codigo <= produtosEmEstoque.size() - 1) {
-                        produto = produtosEmEstoque.get(codigo);
-                    }
                     try {
+                        produto = produtosEmEstoque.get(codigo);
                         compra.adicionarProdutoNaCompra(produto, quantidade);
                     } catch (ValidacaoException e) {
                         print(e);
+
+                    } catch (IndexOutOfBoundsException e) {
+                        print("[NÃO FOI POSSÍVEL ADICIONAR O PRODUTO AO CARRINHO: Código Inválido]");
+
                     }
                     break;
             }

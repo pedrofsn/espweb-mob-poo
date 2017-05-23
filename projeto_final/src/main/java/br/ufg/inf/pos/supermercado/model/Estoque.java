@@ -65,7 +65,7 @@ public class Estoque extends Mock implements Relatavel {
 
             produtosEmEstoque.add(novo);
 
-            registros.add(new Date().toString() + " :: ADICIONADO :: " + novo.toString());
+            registros.add("Um novo produto foi adicionado ao estoque: " + novo.toString());
         }
     }
 
