@@ -13,10 +13,18 @@ public class Estudo {
     private String instituicao;
     private int nivel;
 
-    public Estudo(String instituicao, int nivel) {
-        this.instituicao = instituicao;
+    public Estudo(int nivel) {
+        this.instituicao = "Instituição " + nivel;
         this.nivel = nivel;
     }
+
+    public boolean isSemEstudo(){return SEM_ESTUDO == nivel;};
+
+    public boolean isBasico(){return BASICO == nivel;};
+
+    public boolean isMedio(){return MEDIO == nivel;};
+
+    public boolean isGraduacao(){return GRADUACAO == nivel;};
 
     public String getInstituicao() {
         return instituicao;
@@ -33,4 +41,25 @@ public class Estudo {
     public void setNivel(int nivel) {
         this.nivel = nivel;
     }
+
+    public double calcularSalario(double renda) {
+        double valor = 0.0;
+
+        if (nivel > SEM_ESTUDO) {
+            if (nivel <= BASICO) {
+                valor += (10/100) * renda + renda;
+            }
+
+            if (nivel <= MEDIO) {
+                valor += (50/100) * renda + renda;
+            }
+
+            if (nivel <= GRADUACAO) {
+                valor += (100/100) * renda + renda;
+            }
+        }
+
+        return valor;
+    }
+
 }

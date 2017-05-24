@@ -5,20 +5,15 @@ package br.ufg.esp.empresas;
  */
 public class Funcionario {
 
+    private static final double RENDA_BASICA = 1000;
+
     private int codigo;
     private String nome;
     private Estudo estudo;
-    private double rendaBasica = 1000;
 
-    public Funcionario(int codigo, String nome) {
+    public Funcionario(int codigo, Estudo estudo) {
         this.codigo = codigo;
-        this.nome = nome;
-        this.estudo = null;
-    }
-
-    public Funcionario(int codigo, String nome, Estudo estudo) {
-        this.codigo = codigo;
-        this.nome = nome;
+        this.nome = "Fulano " + codigo;
         this.estudo = estudo;
     }
 
@@ -44,5 +39,9 @@ public class Funcionario {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public double getSalario() {
+        return estudo.calcularSalario(RENDA_BASICA);
     }
 }
