@@ -2,7 +2,7 @@ package br.ufg.inf.pos.supermercado.model;
 
 import br.ufg.inf.pos.supermercado.controller.ControllerOperadorCaixa;
 import br.ufg.inf.pos.supermercado.domain.Mock;
-import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
+import br.ufg.inf.pos.supermercado.exception.ValidacaoException;
 
 import java.util.ArrayList;
 import java.util.List;

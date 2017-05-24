@@ -1,9 +1,13 @@
 package br.ufg.inf.pos.supermercado.ui;
 
 import br.ufg.inf.pos.supermercado.controller.ControllerLogin;
-import br.ufg.inf.pos.supermercado.exceptions.QuantidadeException;
-import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
-import br.ufg.inf.pos.supermercado.model.*;
+import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
+import br.ufg.inf.pos.supermercado.exception.QuantidadeException;
+import br.ufg.inf.pos.supermercado.exception.ValidacaoException;
+import br.ufg.inf.pos.supermercado.model.Compra;
+import br.ufg.inf.pos.supermercado.model.Funcionario;
+import br.ufg.inf.pos.supermercado.model.Produto;
+import br.ufg.inf.pos.supermercado.model.Sessao;
 import br.ufg.inf.pos.supermercado.util.Constantes;
 import br.ufg.inf.pos.supermercado.util.Utils;
 

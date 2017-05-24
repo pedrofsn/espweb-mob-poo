@@ -1,6 +1,6 @@
 package br.ufg.inf.pos.supermercado.controller;
 
-import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
+import br.ufg.inf.pos.supermercado.exception.ValidacaoException;
 import br.ufg.inf.pos.supermercado.model.Caixa;
 import br.ufg.inf.pos.supermercado.model.Funcionario;
 import br.ufg.inf.pos.supermercado.util.Constantes;

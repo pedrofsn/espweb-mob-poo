@@ -1,7 +1,7 @@
 package br.ufg.inf.pos.supermercado.model;
 
 import br.ufg.inf.pos.supermercado.domain.Mock;
-import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
+import br.ufg.inf.pos.supermercado.exception.ValidacaoException;
 import br.ufg.inf.pos.supermercado.util.Constantes;
 import br.ufg.inf.pos.supermercado.util.Utils;
 

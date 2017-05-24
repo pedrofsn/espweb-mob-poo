@@ -1,7 +1,7 @@
 package br.ufg.inf.pos.supermercado.controller;
 
-import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
-import br.ufg.inf.pos.supermercado.model.TipoUsuario;
+import br.ufg.inf.pos.supermercado.domain.TipoUsuario;
+import br.ufg.inf.pos.supermercado.exception.ValidacaoException;
 import br.ufg.inf.pos.supermercado.util.Utils;
 
 import javax.security.auth.login.LoginException;

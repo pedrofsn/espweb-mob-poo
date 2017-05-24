@@ -1,7 +1,7 @@
 package br.ufg.inf.pos.supermercado.model;
 
 import br.ufg.inf.pos.supermercado.controller.ControllerTrocoDinheiro;
-import br.ufg.inf.pos.supermercado.exceptions.ValidacaoException;
+import br.ufg.inf.pos.supermercado.exception.ValidacaoException;
 import br.ufg.inf.pos.supermercado.util.Constantes;
 import br.ufg.inf.pos.supermercado.util.Utils;
 
@@ -121,6 +121,6 @@ public class Compra {
     public String toString() {
         Funcionario funcionario = Sessao.getInstance().getFuncionarioPeloCodigo(codigoCaixa);
         String formaVenda = isDinheiro() ? "dinheiro" : "cartão de crédito";
-        return funcionario.toString() + " : efetuou uma venda no " + formaVenda + ", no valor de R$ " + getValor();
+        return funcionario.toString() + " : efetuou uma venda no " + formaVenda + ", no valor de R$ " + getValor() + " | " + getDate();
     }
 }
