@@ -30,3 +30,10 @@ O supermercado tem 1 gerente e 5 funcionários, que se revezam nos 3 caixas de p
 + Gerente pode emitir relatórios de vendas e de estoque;
 + + O relatório de vendas deve informar, para cada caixa, os valores das vendas realizadas no dia, assim como o funcionário responsável pela venda;
 + + O relatório de estoque deve informar as quantidades disponíveis por produto no início do dia e no final do dia;
+
+### Visão macro do projeto
+![Diagrama de Pacotes](https://github.com/pedrofsn/espweb-mob-poo/raw/master/projeto_final/diagramas_uml/diagrama_de_pacotes_vis%C3%A3o_macro.png)
+
+### Diagrama de classes (desatualizado)
+
+![Diagrama de Classes](https://github.com/pedrofsn/espweb-mob-poo/raw/master/projeto_final/diagramas_uml/uml_desatualizado.png)
