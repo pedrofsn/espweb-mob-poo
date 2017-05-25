@@ -7,29 +7,26 @@ import java.util.List;
 
 /**
  * Created by pedrofsn on 24/05/2017.
- * Crie um programa que simule uma empresa com 10 funcionários. Utilize um array,
- * sendo que a escolaridade dos funcionários seja distribuída da seguinte forma: 40% ensino
- * básico, 40% ensino médio e 20% nível superior. Calcule os custos da empresa com
- * salários totais e por nível de escolaridade. Utilize a classe funcionário desenvolvida no
- * enunciado anterior
+ * 10. Refaça o enunciado 7 considerando que 10% dos funcionários são Gerentes, 20%
+ * são Supervisores e 70% são Vendedores.
  */
 public class Main {
 
     public static void main(String[] args) {
         List<Funcionario> funcionarios = new ArrayList<>();
 
-        funcionarios.add(new Funcionario(0, new Estudo(Estudo.BASICO)));
-        funcionarios.add(new Funcionario(1, new Estudo(Estudo.BASICO)));
-        funcionarios.add(new Funcionario(2, new Estudo(Estudo.BASICO)));
-        funcionarios.add(new Funcionario(3, new Estudo(Estudo.BASICO)));
+        funcionarios.add(new Funcionario(0, new Estudo(Estudo.BASICO), new Comissao(Comissao.TIPO_GERENTE)));
+        funcionarios.add(new Funcionario(1, new Estudo(Estudo.BASICO), new Comissao(Comissao.TIPO_SUPERVISOR)));
+        funcionarios.add(new Funcionario(2, new Estudo(Estudo.BASICO), new Comissao(Comissao.TIPO_SUPERVISOR)));
+        funcionarios.add(new Funcionario(3, new Estudo(Estudo.BASICO), new Comissao(Comissao.TIPO_VENDEDOR)));
 
-        funcionarios.add(new Funcionario(4, new Estudo(Estudo.MEDIO)));
-        funcionarios.add(new Funcionario(5, new Estudo(Estudo.MEDIO)));
-        funcionarios.add(new Funcionario(6, new Estudo(Estudo.MEDIO)));
-        funcionarios.add(new Funcionario(7, new Estudo(Estudo.MEDIO)));
+        funcionarios.add(new Funcionario(4, new Estudo(Estudo.MEDIO), new Comissao(Comissao.TIPO_VENDEDOR)));
+        funcionarios.add(new Funcionario(5, new Estudo(Estudo.MEDIO), new Comissao(Comissao.TIPO_VENDEDOR)));
+        funcionarios.add(new Funcionario(6, new Estudo(Estudo.MEDIO), new Comissao(Comissao.TIPO_VENDEDOR)));
+        funcionarios.add(new Funcionario(7, new Estudo(Estudo.MEDIO), new Comissao(Comissao.TIPO_VENDEDOR)));
 
-        funcionarios.add(new Funcionario(8, new Estudo(Estudo.GRADUACAO)));
-        funcionarios.add(new Funcionario(9, new Estudo(Estudo.GRADUACAO)));
+        funcionarios.add(new Funcionario(8, new Estudo(Estudo.GRADUACAO), new Comissao(Comissao.TIPO_VENDEDOR)));
+        funcionarios.add(new Funcionario(9, new Estudo(Estudo.GRADUACAO), new Comissao(Comissao.TIPO_VENDEDOR)));
 
         double totalSalariosSemEstudo = 0.0;
         double totalSalariosBasico = 0.0;
@@ -38,16 +35,16 @@ public class Main {
 
         for (Funcionario funcionario : funcionarios) {
             if (funcionario.getEstudo().isSemEstudo()) {
-                totalSalariosSemEstudo += funcionario.getSalario();
+                totalSalariosSemEstudo += funcionario.getRendaTotal();
 
             } else if (funcionario.getEstudo().isBasico()) {
-                totalSalariosBasico += funcionario.getSalario();
+                totalSalariosBasico += funcionario.getRendaTotal();
 
             } else if (funcionario.getEstudo().isMedio()) {
-                totalSalariosMedio += funcionario.getSalario();
+                totalSalariosMedio += funcionario.getRendaTotal();
 
             } else if (funcionario.getEstudo().isGraduacao()) {
-                totalSalariosGraduacao += funcionario.getSalario();
+                totalSalariosGraduacao += funcionario.getRendaTotal();
             }
         }
 
@@ -58,6 +55,11 @@ public class Main {
         Utils.print("A soma dos salários dos funcionários COM NÍVEL BÁSICO é de " + Utils.getValorMonetario(totalSalariosBasico));
         Utils.print("A soma dos salários dos funcionários COM NÍVEL MÉDIO é de " + Utils.getValorMonetario(totalSalariosMedio));
         Utils.print("A soma dos salários dos funcionários COM GRADUAÇÃO é de " + Utils.getValorMonetario(totalSalariosGraduacao));
+
+        Utils.print("\nVALORES:\n");
+        for (Funcionario f : funcionarios) {
+            Utils.print(f.toString());
+        }
     }
 
 }

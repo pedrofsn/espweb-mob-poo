@@ -1,5 +1,7 @@
 package br.ufg.esp.empresas;
 
+import br.ufg.esp.Utils;
+
 /**
  * Created by pedrofsn on 24/05/17.
  */
@@ -10,11 +12,13 @@ public class Funcionario {
     private int codigo;
     private String nome;
     private Estudo estudo;
+    private Comissao comissao;
 
-    public Funcionario(int codigo, Estudo estudo) {
+    public Funcionario(int codigo, Estudo estudo, Comissao comissao) {
         this.codigo = codigo;
         this.nome = "Fulano " + codigo;
         this.estudo = estudo;
+        this.comissao = comissao;
     }
 
     public Estudo getEstudo() {
@@ -41,7 +45,25 @@ public class Funcionario {
         this.nome = nome;
     }
 
-    public double getSalario() {
-        return estudo.calcularSalario(RENDA_BASICA);
+    public double getRendaTotal() {
+        double comissao = 0.0;
+        if (!Utils.isNullOrEmpty(getComissao())) {
+            comissao = getComissao().getValor();
+        }
+
+        return estudo.calcularSalario(RENDA_BASICA) + comissao;
+    }
+
+    public Comissao getComissao() {
+        return comissao;
+    }
+
+    public void setComissao(Comissao comissao) {
+        this.comissao = comissao;
+    }
+
+    @Override
+    public String toString() {
+        return nome + " recebeu " + Utils.getValorMonetario(getRendaTotal()) + "(" + Utils.getValorMonetario(comissao.getValor()) + " de comissão)";
     }
 }
