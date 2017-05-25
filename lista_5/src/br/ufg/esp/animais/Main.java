@@ -11,9 +11,9 @@ public class Main {
         Cachorro cachorro = new Cachorro();
         Preguica preguica = new Preguica();
 
-	    Animal[] animais = new Animal[]{cavalo, cachorro, preguica};
+        Animal[] animais = new Animal[]{cavalo, cachorro, preguica};
 
-	    // Exercício 2
+        // Exercício 2
         for (Animal animal : animais) {
             animal.emitirSom();
         }

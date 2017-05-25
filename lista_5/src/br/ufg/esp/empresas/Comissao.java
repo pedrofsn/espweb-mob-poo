@@ -5,14 +5,12 @@ package br.ufg.esp.empresas;
  */
 public class Comissao {
 
-    private static final int VALOR_GERENTE = 1500;
-    private static final int VALOR_SUPERVISOR = 600;
-    private static final int VALOR_VENDEDOR = 250;
-
     public static final int TIPO_GERENTE = 0;
     public static final int TIPO_SUPERVISOR = 1;
     public static final int TIPO_VENDEDOR = 2;
-
+    private static final int VALOR_GERENTE = 1500;
+    private static final int VALOR_SUPERVISOR = 600;
+    private static final int VALOR_VENDEDOR = 250;
     private int tipo;
 
     public Comissao(int tipo) {

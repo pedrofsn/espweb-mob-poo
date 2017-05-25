@@ -8,7 +8,7 @@ import br.ufg.esp.Utils;
 public class Veterinario {
 
     public void examinar(Animal[] animais) {
-        if(!Utils.isNullOrEmpty(animais)) {
+        if (!Utils.isNullOrEmpty(animais)) {
             for (Animal animal : animais) {
                 examinar(animal);
             }
@@ -16,7 +16,7 @@ public class Veterinario {
     }
 
     public void examinar(Animal animal) {
-        if(!Utils.isNullOrEmpty(animal)) {
+        if (!Utils.isNullOrEmpty(animal)) {
             Utils.print("Examinando...");
             animal.emitirSom();
         }

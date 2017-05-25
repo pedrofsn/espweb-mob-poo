@@ -18,13 +18,29 @@ public class Estudo {
         this.nivel = nivel;
     }
 
-    public boolean isSemEstudo(){return SEM_ESTUDO == nivel;};
+    public boolean isSemEstudo() {
+        return SEM_ESTUDO == nivel;
+    }
 
-    public boolean isBasico(){return BASICO == nivel;};
+    ;
 
-    public boolean isMedio(){return MEDIO == nivel;};
+    public boolean isBasico() {
+        return BASICO == nivel;
+    }
 
-    public boolean isGraduacao(){return GRADUACAO == nivel;};
+    ;
+
+    public boolean isMedio() {
+        return MEDIO == nivel;
+    }
+
+    ;
+
+    public boolean isGraduacao() {
+        return GRADUACAO == nivel;
+    }
+
+    ;
 
     public String getInstituicao() {
         return instituicao;
@@ -47,15 +63,15 @@ public class Estudo {
 
         if (nivel > SEM_ESTUDO) {
             if (nivel <= BASICO) {
-                valor += (10/100) * renda + renda;
+                valor += (10 / 100) * renda + renda;
             }
 
             if (nivel <= MEDIO) {
-                valor += (50/100) * renda + renda;
+                valor += (50 / 100) * renda + renda;
             }
 
             if (nivel <= GRADUACAO) {
-                valor += (100/100) * renda + renda;
+                valor += (100 / 100) * renda + renda;
             }
         }
 
